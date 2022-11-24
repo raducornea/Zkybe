@@ -1,0 +1,19 @@
+.mat-toolbar {
+    background: rgb(0, 4, 4);
+    color: #8AC53F;
+ }
+
+ .mat-button{
+    font-size: x-large;
+    font-weight: bold;
+   
+ }
+
+ #idUserProfile{
+   width: 300px;
+   height: 300px;
+ }
+
+ #divUserProfile{
+   text-align: center;
+ }

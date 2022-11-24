@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { MatButtonModule, MatCardModule, MatToolbarModule } from '@angular/material';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
