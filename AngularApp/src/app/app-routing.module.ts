@@ -1,11 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChatConversationComponent } from './chat/chat-conversation/chat-conversation.component';
+import { ChatInformationComponent } from './chat/chat-information/chat-information.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
 
 const routes: Routes = [
-  {
-    path: 'chat',
-    loadChildren: () => import('./chat/chat.module').then(mod => mod.ChatModule)
-  }
+    // localhost:4200/
+    { 
+      path: '', component: LandingpageComponent, pathMatch: 'full' 
+    },
+    // localhost:4200/chat/
+    { 
+      path: 'chat', component: ChatInformationComponent, pathMatch: 'full' 
+    },
+    // localhost:4200/chat/{id}
+    { 
+      path: 'chat/:id', component: ChatConversationComponent
+    }
 ];
 
 @NgModule({

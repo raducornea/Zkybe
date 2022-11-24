@@ -1,1 +1,22 @@
 <p>chat-conversation works!</p>
+
+<div>
+    https://stackoverflow.com/questions/53020792/how-to-set-width-of-mat-table-column-in-angular
+</div>
+
+<mat-grid-list [cols]="8" rowHeight="75px">
+    <mat-grid-tile *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="tile.color">
+
+        <ng-container *ngIf="tile.hasImage; else textContainer">
+            <img [src]="tile.imageUrl" width="50" height="50"/>
+        </ng-container>
+        
+        <ng-template #textContainer>
+            {{tile.text}}
+        </ng-template>
+
+    </mat-grid-tile>
+  </mat-grid-list>
