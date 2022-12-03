@@ -9,6 +9,9 @@ import { MatButtonModule, MatCardModule, MatToolbarModule } from '@angular/mater
 import { ChatInformationComponent } from './chat/chat-information/chat-information.component';
 import { ChatConversationComponent } from './chat/chat-conversation/chat-conversation.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -18,7 +21,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     AppComponent,
     LandingpageComponent,
     ChatInformationComponent,
-    ChatConversationComponent
+    ChatConversationComponent,
+    RegisterComponent,
+    HeaderComponent
   ],
   // de pus modulele aici
   imports: [
@@ -28,7 +33,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
