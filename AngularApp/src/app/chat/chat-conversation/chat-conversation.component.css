@@ -1,0 +1,21 @@
+  .text_area_for_chat_message {
+      width: 100%;
+      height: 100%;
+      background-color: lightgray;
+  }
+
+  #textarea_chat_message_input {
+      resize: none;
+      height: 73px;
+      border-bottom-color: lightgray;
+  }
+
+
+.conversation_picture_mat_grid {
+    position: absolute;
+    left: 5px;
+}
+.conversation_title_mat_grid {
+    position: absolute;
+    left: 60px;
+}
