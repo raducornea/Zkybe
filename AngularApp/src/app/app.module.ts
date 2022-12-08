@@ -11,6 +11,7 @@ import { ChatConversationComponent } from './chat/chat-conversation/chat-convers
 import { MatGridListModule } from '@angular/material/grid-list';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -21,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LandingpageComponent,
     ChatInformationComponent,
     ChatConversationComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderComponent
   ],
   // de pus modulele aici
   imports: [
