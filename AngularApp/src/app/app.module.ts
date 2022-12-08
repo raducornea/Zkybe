@@ -9,7 +9,8 @@ import { MatButtonModule, MatCardModule, MatToolbarModule } from '@angular/mater
 import { ChatInformationComponent } from './chat/chat-information/chat-information.component';
 import { ChatConversationComponent } from './chat/chat-conversation/chat-conversation.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -28,7 +29,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
