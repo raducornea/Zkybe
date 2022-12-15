@@ -5,6 +5,7 @@ import { ChatInformationComponent } from './chat/chat-information/chat-informati
 import { HeaderComponent } from './header/header.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { RegisterComponent } from './register/register.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
     // localhost:4200/
@@ -26,6 +27,9 @@ const routes: Routes = [
     // localhost:4200/header
     { 
       path: 'header', component: HeaderComponent
+    },
+    { 
+      path: 'my-profile', component: UserProfileComponent
     }
 ];
 
