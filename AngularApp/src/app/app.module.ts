@@ -9,7 +9,6 @@ import { MatButtonModule, MatCardModule, MatToolbarModule } from '@angular/mater
 import { ChatInformationComponent } from './chat/chat-information/chat-information.component';
 import { ChatConversationComponent } from './chat/chat-conversation/chat-conversation.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -27,6 +26,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     HeaderComponent,
     UserProfileComponent
   ],
+
   imports: [
     BrowserModule,
     HttpClientModule,
