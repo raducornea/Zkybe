@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { ChatButtonComponent } from './chat/chat-button/chat-button.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { MatInputModule } from '@angular/material/input';
     ChatInformationComponent,
     ChatConversationComponent,
     RegisterComponent,
-    HeaderComponent
+    HeaderComponent,
+    ChatButtonComponent
   ],
   // de pus modulele aici
   imports: [
