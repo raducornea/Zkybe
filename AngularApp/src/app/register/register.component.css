@@ -1,0 +1,39 @@
+body {
+    height: 100%;
+  
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .container {
+    position: absolute;
+    right: 0;
+    margin: 80px;
+    top: 30px;
+    max-width: 300px;
+    padding: 16px;
+    background-color: #8AC53F;
+  }
+  
+    input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #fefafa;
+  }
+  
+  .register_btn {
+    width: 265px;
+    height: 40px;
+    background-color:#000000;
+    color: rgb(255, 255, 255);
+  }
+  
+  .img_register{
+    position: absolute;
+    width: 100%;
+
+   }

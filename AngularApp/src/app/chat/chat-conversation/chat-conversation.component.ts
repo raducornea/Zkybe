@@ -5,11 +5,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './chat-conversation.component.html',
   styleUrls: ['./chat-conversation.component.css']
 })
+
 export class ChatConversationComponent implements OnInit {
+  textValue: string = "";
 
-  constructor() { }
-
-  ngOnInit(): void {
+  onKey(event: any){
+    this.textValue = event.target.value;
   }
 
+  constructor() { }
+  ngOnInit(): void {
+  }
 }
