@@ -36,8 +36,8 @@ public class MessageDTO {
 
     public MessageDTO(Message message) {
         this.id = message.getId();
-        this.idSender = message.getSender().getId();
-        this.idReceivers = message.getReceived().getId();
+        this.idSender = message.getIdSender();
+        this.idReceivers = message.getIdReceiver();
         this.content = message.getContent();
         this.date = message.getDate();
         this.time = message.getTime();

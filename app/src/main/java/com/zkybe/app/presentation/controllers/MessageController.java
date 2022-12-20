@@ -2,10 +2,12 @@ package com.zkybe.app.presentation.controllers;
 
 import com.zkybe.app.business.services.MessageService;
 import com.zkybe.app.dtos.MessageDTO;
+import com.zkybe.app.dtos.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,5 +20,17 @@ public class MessageController {
     @GetMapping("messages")
     public List<MessageDTO> getAllMessages() {
         return messageService.getMessages();
+    }
+    @PostMapping("/{id}/send_message/{idReceiver}")
+    public ResponseEntity<MessageDTO> addMessage(@RequestBody MessageDTO messageDTO,@PathVariable Integer id,@PathVariable Integer idReceiver) {
+        long millis = System.currentTimeMillis();
+        java.sql.Date date = new java.sql.Date(millis);
+        messageDTO.setDate(date);
+
+        java.sql.Time time = new java.sql.Time(millis);
+        messageDTO.setTime(time);
+        messageDTO.setIdSender(id);
+        messageDTO.setIdReceivers(idReceiver);
+        return new ResponseEntity<>(messageService.addMessage(messageDTO), new HttpHeaders(), HttpStatus.OK);
     }
 }

@@ -7,27 +7,47 @@ import lombok.Setter;
 import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "friend_requests")
-public class FriendRequest {
+@IdClass(FriendRequestId.class)
+public class FriendRequest implements Serializable {
     @Id
-    @Column(name = "sender_id")
-    private Integer id;
+   // @Column(name = "sender_id")
+    private Integer senderId;
 
+   // @Column(name="receiver_id", insertable = false, updatable = false)
+    @Id
+    private Integer receiverId;
     @JsonIgnore
     @OneToOne
-    @MapsId
-    @JoinColumn(name = "sender_id")
+    //@MapsId
+    @JoinColumn(name = "sender_id", insertable = false, updatable = false)
     private User sender;
 
+
     @ManyToOne
-    @JoinColumn(name = "receiver_id", nullable = false)
+    //@Id
+    @JoinColumn(name = "receiver_id", insertable = false, updatable = false)
     private User receiver;
 
     @Column(name = "answered", nullable = false)
     private Boolean answered;
+
+    public FriendRequest(FriendRequestDTO friendRequestDTO)
+    {
+        this.senderId = friendRequestDTO.getSenderId();
+        this.receiverId = friendRequestDTO.getReceiverId();
+        this.answered=friendRequestDTO.getAnswered();
+    }
+
+    public FriendRequest(Integer senderId, Integer receiverId, boolean b) {
+        this.senderId = senderId;
+        this.receiverId = receiverId;
+        this.answered = b;
+    }
 }

@@ -1,6 +1,7 @@
 package com.zkybe.app.presentation.controllers;
 
 import com.zkybe.app.business.services.UserPreferencesService;
+import com.zkybe.app.dtos.UserDTO;
 import com.zkybe.app.dtos.UserPreferencesDTO;
 import com.zkybe.app.dtos.UserProfileDTO;
 import com.zkybe.app.presentation.requests.UserPreferencesRequest;
@@ -45,5 +46,9 @@ public class UserPreferencesController {
             return new ResponseEntity<>("Updated", new HttpHeaders(), HttpStatus.OK);
         else
             return new ResponseEntity<>("Failed", new HttpHeaders(), HttpStatus.NO_CONTENT);
+    }
+    @PutMapping("/add_user_preferences")
+    public ResponseEntity<UserPreferencesDTO> addUser(@RequestBody UserPreferencesDTO userPreferencesDTO) {
+        return new ResponseEntity<>(userPreferencesService.addUserPreferences(userPreferencesDTO), new HttpHeaders(), HttpStatus.OK);
     }
 }

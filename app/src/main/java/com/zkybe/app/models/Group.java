@@ -1,6 +1,7 @@
 package com.zkybe.app.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.zkybe.app.dtos.GroupDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -45,9 +46,14 @@ public class Group {
     private List<Message> messages;
 
 
+    //@PrimaryKeyJoinColumn
+//    @JsonIgnore
+//    @OneToOne(mappedBy = "group",cascade = CascadeType.ALL)
+//    private DeletedGroup deletedGroup;
+
     @JsonIgnore
     @OneToOne(mappedBy = "group", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
+    //@PrimaryKeyJoinColumn
     private DeletedGroup deletedGroup;
     @OneToMany(
             mappedBy = "group",
@@ -56,11 +62,11 @@ public class Group {
     )
     private List<UserGroup> users = new ArrayList<>();
 
-    public void addUser(User user) {
-        UserGroup userGroup = new UserGroup(user, this);
-        users.add(userGroup);
-        user.getGroups().add(userGroup);
-    }
+//    public void addUser(User user) {
+//        UserGroup userGroup = new UserGroup(user, this);
+//        users.add(userGroup);
+//        user.getGroups().add(userGroup);
+//    }
 
     public void removeUser(User user) {
         for (Iterator<UserGroup> iterator = users.iterator();
@@ -74,6 +80,16 @@ public class Group {
                 userGroup.setUser(null);
             }
         }
+    }
+    public Group(GroupDTO groupDTO)
+    {
+        this.id = groupDTO.getId();
+        this.groupPicture = groupDTO.getGroupPicture();
+        this.name = groupDTO.getName();
+        this.creationDate = groupDTO.getCreationDate();
+        this.groupTag = groupDTO.getGroupTag();
+        this.groupTheme = groupDTO.getGroupTheme();
+        this.secret = groupDTO.getSecret();
     }
 
 }

@@ -9,4 +9,5 @@ public class FriendlistMapper {
     public FriendlistDTO mapToDto(User friendlist) {
         return new FriendlistDTO(friendlist);
     }
+
 }

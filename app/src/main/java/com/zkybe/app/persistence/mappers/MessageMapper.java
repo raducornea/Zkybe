@@ -10,4 +10,5 @@ public class MessageMapper {
     {
         return new MessageDTO(message);
     }
+    public Message mapToModel(MessageDTO messageDTO){return new Message(messageDTO);}
 }

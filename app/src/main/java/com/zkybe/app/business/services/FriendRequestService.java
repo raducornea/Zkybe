@@ -22,4 +22,11 @@ public class FriendRequestService {
                 .map(requests -> friendRequestMapper.mapToDto(requests))
                 .collect(Collectors.toList());
     }
+
+    public FriendRequestDTO sendFriendRequest(Integer senderId, Integer receiverId)
+    {
+        return friendRequestMapper.mapToDto(friendRequestRepository
+                        .save(friendRequestMapper.mapToModel(new FriendRequestDTO(senderId,receiverId,false))));
+    }
+
 }
