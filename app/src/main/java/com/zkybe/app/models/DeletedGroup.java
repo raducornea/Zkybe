@@ -1,6 +1,7 @@
 package com.zkybe.app.models;
 
 
+import com.zkybe.app.dtos.DeletedGroupDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,10 +22,15 @@ public class DeletedGroup {
 
     @JsonIgnore
     @OneToOne
-    @MapsId
+    //@MapsId
     @JoinColumn(name = "id_group")
     private Group group;
 
     @Column(name = "deletion_date")
     private Date deletionDate;
+
+    public DeletedGroup(DeletedGroupDTO deletedGroupDTO) {
+        this.groupId = deletedGroupDTO.getIdGroup();
+        this.deletionDate = deletedGroupDTO.getDeletionDate();
+    }
 }

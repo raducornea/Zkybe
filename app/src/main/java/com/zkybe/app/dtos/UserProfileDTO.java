@@ -1,7 +1,6 @@
 package com.zkybe.app.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.zkybe.app.models.User;
 import com.zkybe.app.models.UserProfile;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,49 +16,39 @@ public class UserProfileDTO {
     @JsonProperty("id")
     private Integer id;
 
-    @JsonProperty("nickname")
-    private String nickname;
-
-    @JsonProperty("password")
-    private String password;
-
     @JsonProperty("profilePicture")
     private Blob profilePicture;
 
     @JsonProperty("status")
     private String status;
 
-    @JsonProperty("lastName")
+    @JsonProperty("last_name")
     private String lastName;
 
-    @JsonProperty("firstName")
+    @JsonProperty("first_name")
     private String firstName;
 
     @JsonProperty("birthdate")
-    private Date birthDate;
+    private Date birthdate;
 
     public UserProfileDTO(UserProfile userProfile) {
         this.id = userProfile.getId();
-        this.nickname = userProfile.getUser().getNickname();
-        this.password = userProfile.getUser().getPassword();
         this.profilePicture = userProfile.getProfilePicture();
         this.status = userProfile.getStatus();
         this.lastName = userProfile.getLastName();
         this.firstName = userProfile.getFirstName();
-        this.birthDate = userProfile.getBirthDate();
+        this.birthdate = userProfile.getBirthDate();
     }
 
     public UserProfileDTO(Integer id, String nickname, String password,
                           Blob profilePicture, String status, String lastName,
                           String firstName, Date birthDate) {
         this.id = id;
-        this.nickname = nickname;
-        this.password = password;
         this.profilePicture = profilePicture;
         this.status = status;
         this.lastName = lastName;
         this.firstName = firstName;
-        this.birthDate = birthDate;
+        this.birthdate = birthDate;
     }
 
 }

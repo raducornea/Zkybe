@@ -1,5 +1,6 @@
 package com.zkybe.app.models;
 
+import com.zkybe.app.dtos.MessageDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,14 +19,20 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "id_sender", nullable = false)
+    @Column(name = "id_sender")
+    private Integer idSender;
+
+    @Column(name = "id_receiver")
+    private Integer idReceiver;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_sender", nullable = false, insertable = false, updatable = false)
     private User sender;
 
 
     @ManyToOne
     @JoinColumn(name = "id_receiver", nullable = false, insertable = false, updatable = false)
-    private Message received;
+    private Group received;
 
     @Column(name = "content")
     private String content;
@@ -35,5 +42,14 @@ public class Message {
 
     @Column(name = "time")
     private Time time;
+
+    public Message(MessageDTO messageDTO) {
+        this.id = messageDTO.getId();
+        this.date = messageDTO.getDate();
+        this.time = messageDTO.getTime();
+        this.content = messageDTO.getContent();
+        this.idSender = messageDTO.getIdSender();
+        this.idReceiver = messageDTO.getIdReceivers();
+    }
 
 }

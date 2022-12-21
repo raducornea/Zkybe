@@ -20,8 +20,14 @@ public class FriendRequestDTO {
     private Boolean answered;
 
     public FriendRequestDTO(FriendRequest friendRequest) {
-        this.senderId = friendRequest.getId();
-        this.receiverId = friendRequest.getReceiver().getId();
+        this.senderId = friendRequest.getSenderId();
+        this.receiverId = friendRequest.getReceiverId();
         this.answered = friendRequest.getAnswered();
+    }
+
+    public FriendRequestDTO(Integer senderId, Integer receiverId, boolean b) {
+        this.senderId = senderId;
+        this.receiverId = receiverId;
+        this.answered = b;
     }
 }

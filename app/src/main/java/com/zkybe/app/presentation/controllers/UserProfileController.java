@@ -29,9 +29,10 @@ public class UserProfileController {
                 .orElseGet(() -> new ResponseEntity<>(null, new HttpHeaders(), HttpStatus.NOT_FOUND));
     }
 
-    @PostMapping("users/{id}/create_profile")
-    public ResponseEntity<UserProfileDTO> createProfile(@RequestBody UserProfileRequest simpleUserProfileDto,
+    @PutMapping("users/{id}/create_profile")
+    public ResponseEntity<UserProfileDTO> createProfile(@RequestBody UserProfileDTO simpleUserProfileDto,
                                                         @PathVariable Integer id) {
+        System.out.println();
         return userProfileService.createProfile(id, simpleUserProfileDto.getProfilePicture(),
                         simpleUserProfileDto.getStatus(), simpleUserProfileDto.getLastName(),
                         simpleUserProfileDto.getFirstName(), simpleUserProfileDto.getBirthdate())

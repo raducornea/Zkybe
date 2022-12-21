@@ -16,7 +16,7 @@ public class BlockedUserDTO {
     private Integer blockedUserId;
 
     public BlockedUserDTO(BlockedUser blockedUser) {
-        this.userId = blockedUser.getUserId();
+        this.userId = blockedUser.getUser().getId();
         this.blockedUserId = blockedUser.getBlockedUser().getId();
     }
 }

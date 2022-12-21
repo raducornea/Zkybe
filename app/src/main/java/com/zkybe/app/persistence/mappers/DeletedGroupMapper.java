@@ -9,4 +9,8 @@ public class DeletedGroupMapper {
     public DeletedGroupDTO mapToDto(DeletedGroup deletedGroup) {
         return new DeletedGroupDTO(deletedGroup);
     }
+
+    public DeletedGroup mapToModel(DeletedGroupDTO deletedGroupDTO) {
+        return new DeletedGroup(deletedGroupDTO);
+    }
 }
