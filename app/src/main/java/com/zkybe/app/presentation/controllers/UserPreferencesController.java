@@ -47,8 +47,9 @@ public class UserPreferencesController {
         else
             return new ResponseEntity<>("Failed", new HttpHeaders(), HttpStatus.NO_CONTENT);
     }
-    @PutMapping("/add_user_preferences")
-    public ResponseEntity<UserPreferencesDTO> addUser(@RequestBody UserPreferencesDTO userPreferencesDTO) {
+    @PutMapping("users/{id}/add_user_preferences")
+    public ResponseEntity<UserPreferencesDTO> addUser(@PathVariable Integer id, @RequestBody UserPreferencesDTO userPreferencesDTO) {
+        userPreferencesDTO.setId(id);
         return new ResponseEntity<>(userPreferencesService.addUserPreferences(userPreferencesDTO), new HttpHeaders(), HttpStatus.OK);
     }
 }
