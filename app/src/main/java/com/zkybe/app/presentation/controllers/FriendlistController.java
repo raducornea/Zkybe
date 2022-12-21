@@ -22,7 +22,7 @@ public class FriendlistController {
     }
 
     @PutMapping("{id}/add_friend/{idFriend}")
-    public ResponseEntity<List<FriendlistDTO>> addFriend(@PathVariable Integer id, @PathVariable Integer idFriend) throws Exception {
+    public ResponseEntity<FriendlistDTO> addFriend(@PathVariable Integer id, @PathVariable Integer idFriend) throws Exception {
         friendlistService.addToFriendlist(idFriend, id);//daca incerc sa adaug prietenul 1 la 2 sa se adauge si vice versa
         return new ResponseEntity<>(friendlistService.addToFriendlist(id, idFriend), new HttpHeaders(), HttpStatus.OK);
     }

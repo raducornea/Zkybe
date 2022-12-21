@@ -22,13 +22,13 @@ public class FriendRequest implements Serializable {
     @Id
     private Integer receiverId;
     @JsonIgnore
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     //@MapsId
     @JoinColumn(name = "sender_id", insertable = false, updatable = false)
     private User sender;
 
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     //@Id
     @JoinColumn(name = "receiver_id", insertable = false, updatable = false)
     private User receiver;

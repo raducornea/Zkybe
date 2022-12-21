@@ -20,11 +20,11 @@ public class ReportedUser implements Serializable {
 
     @Id
     private Integer reportedUserId;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false, insertable = false, updatable = false)
     private User user;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "reported_user_id", nullable = false, insertable = false, updatable = false)
     private User reportedUser;
 

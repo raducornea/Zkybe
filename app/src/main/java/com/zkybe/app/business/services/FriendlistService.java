@@ -29,17 +29,19 @@ public class FriendlistService {
                 .collect(Collectors.toList());
     }
 
-    public List<FriendlistDTO> addToFriendlist(Integer userId, Integer friendId) {
-        Optional<User> user = userRepository.findById(userId);
-        Optional<User> friend = userRepository.findById(friendId);
-        if (user.isPresent() && friend.isPresent()) {
-            List<FriendlistDTO> lst = new ArrayList<>();
-            lst = user.get().addToFriendlist(friend.get()).stream()
-                    .map(us -> friendlistMapper.mapToDto(us)).collect(Collectors.toList());
-            friendlistRepository.save(user.get());
-            return lst;
-        }
-        return new ArrayList<>();
+    public FriendlistDTO addToFriendlist(Integer userId, Integer friendId) {
+//        Optional<User> user = userRepository.findById(userId);
+//        Optional<User> friend = userRepository.findById(friendId);
+//        if (user.isPresent() && friend.isPresent()) {
+//            List<FriendlistDTO> lst = new ArrayList<>();
+//            lst = user.get().addToFriendlist(friend.get()).stream()
+//                    .map(us -> friendlistMapper.mapToDto(us)).collect(Collectors.toList());
+//            friendlistRepository.save(user.get());
+//            return lst;
+//        }
+//        return new ArrayList<>();
+        return friendlistMapper.mapToDto(friendlistRepository
+                .save(friendlistMapper.mapToModel(new FriendlistDTO(userId,friendId))));
 
     }
 

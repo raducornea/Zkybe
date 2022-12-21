@@ -31,7 +31,7 @@ public class User {
     private UserProfile userProfile;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "sender")
+    @OneToMany(mappedBy = "sender", fetch = FetchType.LAZY)
     private List<Message> receiverGroup;
 
     public void setUserPreferences(UserPreferences userPreferences) {
@@ -50,8 +50,8 @@ public class User {
     private UserPreferences userPreferences;
 
     @JsonIgnore
-    @OneToOne(mappedBy = "sender")
-    private FriendRequest friendRequest;
+    @OneToMany(mappedBy = "sender", fetch = FetchType.LAZY)
+    private List<FriendRequest> friendRequest;
 
     @Column(name = "nickname", nullable = false)
     private String nickname;
@@ -60,51 +60,55 @@ public class User {
     private String password;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "receiver")
+    @OneToMany(mappedBy = "receiver", fetch = FetchType.LAZY)
     private Set<FriendRequest> friendRequestSet;
 
-//    @OneToMany(mappedBy = "blockedUser")
-//    private Set<BlockedUser> blockedUsers;
-
-    @OneToMany(mappedBy = "blockedUser")
+    @OneToMany(mappedBy = "blockedUser", fetch = FetchType.LAZY)
     private List<BlockedUser> blockedUsers;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<BlockedUser> usersBlocked;
 
-    @OneToMany(mappedBy = "reportedUser")
+    @OneToMany(mappedBy = "reportedUser", fetch = FetchType.LAZY)
     private List<ReportedUser> reportedUsers;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<ReportedUser> usersReported;
 
     @OneToMany(
             mappedBy = "user",
             cascade = CascadeType.ALL,
-            orphanRemoval = true
+            orphanRemoval = true,
+            fetch = FetchType.LAZY
     )
     private List<UserGroup> groups = new ArrayList<>();
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            })
-    @JsonManagedReference
-    @JoinTable(name = "friendlists",
-            joinColumns = {@JoinColumn(name = "user_id")},
-            inverseJoinColumns = {@JoinColumn(name = "friend_id")})
-    private List<User> friendlist;
-
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            },
-            mappedBy = "friendlist")
-    @JsonBackReference
+//    @ManyToMany(fetch = FetchType.LAZY,
+//            cascade = {
+//                    CascadeType.PERSIST,
+//                    CascadeType.MERGE
+//            })
+//    @JsonManagedReference
+//    @JoinTable(name = "friendlists",
+//            joinColumns = {@JoinColumn(name = "user_id")},
+//            inverseJoinColumns = {@JoinColumn(name = "friend_id")})
+//    private List<User> friendlist;
+//
+//    @ManyToMany(fetch = FetchType.LAZY,
+//            cascade = {
+//                    CascadeType.PERSIST,
+//                    CascadeType.MERGE
+//            },
+//            mappedBy = "friendlist")
+//    @JsonBackReference
+//    @JsonIgnore
+//    private List<User> friends;
     @JsonIgnore
-    private List<User> friends;
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<FriendList> friendlist;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "friend", fetch = FetchType.LAZY)
+    private List<FriendList> friendLists;
     public User(String nickname, String password) {
         this.nickname = nickname;
         this.password = password;
@@ -128,8 +132,8 @@ public class User {
         this.password = password;
     }
 
-    public List<User> addToFriendlist(User friend) {
-        this.friendlist.add(friend);
-        return friendlist;
-    }
+//    public List<User> addToFriendlist(User friend) {
+//        this.friendlist.add(friend);
+//        return friendlist;
+//    }
 }
