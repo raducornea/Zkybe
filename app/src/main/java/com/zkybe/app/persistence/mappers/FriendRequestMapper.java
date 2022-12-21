@@ -9,8 +9,8 @@ public class FriendRequestMapper {
     public FriendRequestDTO mapToDto(FriendRequest friendRequest) {
         return new FriendRequestDTO(friendRequest);
     }
-    public FriendRequest mapToModel(FriendRequestDTO friendRequestDTO)
-    {
+
+    public FriendRequest mapToModel(FriendRequestDTO friendRequestDTO) {
         return new FriendRequest(friendRequestDTO);
     }
 }

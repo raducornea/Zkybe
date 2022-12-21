@@ -13,9 +13,9 @@ import java.io.Serializable;
 @Embeddable
 @NoArgsConstructor
 public class FriendRequestId implements Serializable {
-    @Column(name="sender_id")
+    @Column(name = "sender_id")
     private Integer senderId;
 
-    @Column(name="receiver_id")
+    @Column(name = "receiver_id")
     private Integer receiverId;
 }

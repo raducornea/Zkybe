@@ -17,10 +17,8 @@ import java.io.Serializable;
 @IdClass(FriendRequestId.class)
 public class FriendRequest implements Serializable {
     @Id
-   // @Column(name = "sender_id")
     private Integer senderId;
 
-   // @Column(name="receiver_id", insertable = false, updatable = false)
     @Id
     private Integer receiverId;
     @JsonIgnore
@@ -38,11 +36,10 @@ public class FriendRequest implements Serializable {
     @Column(name = "answered", nullable = false)
     private Boolean answered;
 
-    public FriendRequest(FriendRequestDTO friendRequestDTO)
-    {
+    public FriendRequest(FriendRequestDTO friendRequestDTO) {
         this.senderId = friendRequestDTO.getSenderId();
         this.receiverId = friendRequestDTO.getReceiverId();
-        this.answered=friendRequestDTO.getAnswered();
+        this.answered = friendRequestDTO.getAnswered();
     }
 
     public FriendRequest(Integer senderId, Integer receiverId, boolean b) {

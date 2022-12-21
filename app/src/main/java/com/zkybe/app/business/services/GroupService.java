@@ -1,7 +1,6 @@
 package com.zkybe.app.business.services;
 
 import com.zkybe.app.dtos.GroupDTO;
-import com.zkybe.app.dtos.UserDTO;
 import com.zkybe.app.persistence.mappers.GroupMapper;
 import com.zkybe.app.persistence.repositories.GroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +21,7 @@ public class GroupService {
                 .map(group -> groupMapper.mapToDto(group))
                 .collect(Collectors.toList());
     }
+
     public GroupDTO addGroup(GroupDTO groupDTO) {
         return groupMapper.mapToDto(groupRepository
                 .save(groupMapper.mapToModel(groupDTO)));

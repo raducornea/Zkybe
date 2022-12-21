@@ -22,10 +22,9 @@ public class BlockedUserController {
     }
 
     @PutMapping("/{id}/add_blocked_user")
-    public ResponseEntity<BlockedUserDTO> addBlockedUser(@RequestBody BlockedUserDTO blockedUserDTO, @PathVariable Integer id)
-    {
+    public ResponseEntity<BlockedUserDTO> addBlockedUser(@RequestBody BlockedUserDTO blockedUserDTO, @PathVariable Integer id) {
         blockedUserDTO.setUserId(id);
-        return new ResponseEntity<>(blockedUserService.addBlockedUser(blockedUserDTO),new HttpHeaders(), HttpStatus.OK);
+        return new ResponseEntity<>(blockedUserService.addBlockedUser(blockedUserDTO), new HttpHeaders(), HttpStatus.OK);
     }
 
 }

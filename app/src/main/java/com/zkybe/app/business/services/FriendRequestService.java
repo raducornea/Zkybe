@@ -23,10 +23,9 @@ public class FriendRequestService {
                 .collect(Collectors.toList());
     }
 
-    public FriendRequestDTO sendFriendRequest(Integer senderId, Integer receiverId)
-    {
+    public FriendRequestDTO sendFriendRequest(Integer senderId, Integer receiverId) {
         return friendRequestMapper.mapToDto(friendRequestRepository
-                        .save(friendRequestMapper.mapToModel(new FriendRequestDTO(senderId,receiverId,false))));
+                .save(friendRequestMapper.mapToModel(new FriendRequestDTO(senderId, receiverId, false))));
     }
 
 }

@@ -1,7 +1,6 @@
 package com.zkybe.app.business.services;
 
 import com.zkybe.app.dtos.FriendlistDTO;
-import com.zkybe.app.dtos.UserDTO;
 import com.zkybe.app.models.User;
 import com.zkybe.app.persistence.mappers.FriendlistMapper;
 import com.zkybe.app.persistence.repositories.FriendlistRepository;
@@ -24,19 +23,16 @@ public class FriendlistService {
     @Autowired
     private FriendlistMapper friendlistMapper;
 
-    public List<FriendlistDTO> getFriendlists()
-    {
+    public List<FriendlistDTO> getFriendlists() {
         return friendlistRepository.findAll().stream()
                 .map(friendlist -> friendlistMapper.mapToDto(friendlist))
                 .collect(Collectors.toList());
     }
 
-    public List<FriendlistDTO> addToFriendlist(Integer userId, Integer friendId)
-    {
-        Optional<User> user =  userRepository.findById(userId);
-        Optional<User> friend =  userRepository.findById(friendId);
-        if(user.isPresent() && friend.isPresent())
-        {
+    public List<FriendlistDTO> addToFriendlist(Integer userId, Integer friendId) {
+        Optional<User> user = userRepository.findById(userId);
+        Optional<User> friend = userRepository.findById(friendId);
+        if (user.isPresent() && friend.isPresent()) {
             List<FriendlistDTO> lst = new ArrayList<>();
             lst = user.get().addToFriendlist(friend.get()).stream()
                     .map(us -> friendlistMapper.mapToDto(us)).collect(Collectors.toList());

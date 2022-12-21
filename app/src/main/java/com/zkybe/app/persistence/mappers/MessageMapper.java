@@ -6,9 +6,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class MessageMapper {
-    public MessageDTO mapToDto(Message message)
-    {
+    public MessageDTO mapToDto(Message message) {
         return new MessageDTO(message);
     }
-    public Message mapToModel(MessageDTO messageDTO){return new Message(messageDTO);}
+
+    public Message mapToModel(MessageDTO messageDTO) {
+        return new Message(messageDTO);
+    }
 }

@@ -13,10 +13,10 @@ import java.io.Serializable;
 @Embeddable
 @NoArgsConstructor
 public class BlockedUserId implements Serializable {
-    @Column(name="user_id")
+    @Column(name = "user_id")
     private Integer userId;
 
-    @Column(name="blocked_user_id")
+    @Column(name = "blocked_user_id")
     private Integer blockedUserId;
 
     public BlockedUserId(Integer idUser, Integer idBlockedUser) {

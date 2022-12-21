@@ -7,14 +7,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ReportedUserMapper {
-    public ReportedUserDTO mapToDto(ReportedUser reportedUser)
-    {
+    public ReportedUserDTO mapToDto(ReportedUser reportedUser) {
         return new ReportedUserDTO(reportedUser);
     }
-    public ReportedUser mapToModel(ReportedUserDTO reportedUserDTO, UserRepository userRepository)
-    {
-        System.out.println("_" + userRepository.findById(reportedUserDTO.getUserId()));
-        System.out.println("_" + userRepository.findById(reportedUserDTO.getReportedUserId()));
+
+    public ReportedUser mapToModel(ReportedUserDTO reportedUserDTO, UserRepository userRepository) {
         return new ReportedUser(userRepository.findById(reportedUserDTO.getUserId()),
                 userRepository.findById(reportedUserDTO.getReportedUserId()), reportedUserDTO.getContent());
     }

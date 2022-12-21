@@ -49,20 +49,9 @@ public class User {
     @PrimaryKeyJoinColumn
     private UserPreferences userPreferences;
 
-//    @JsonIgnore
-//    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-//    @PrimaryKeyJoinColumn
-//    private ReportedUser reportedUser;
-
     @JsonIgnore
     @OneToOne(mappedBy = "sender")
-    //@PrimaryKeyJoinColumn
     private FriendRequest friendRequest;
-
-//    @JsonIgnore
-//    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-//    @PrimaryKeyJoinColumn
-//    private BlockedUser blockedUser;
 
     @Column(name = "nickname", nullable = false)
     private String nickname;
@@ -78,21 +67,16 @@ public class User {
 //    private Set<BlockedUser> blockedUsers;
 
     @OneToMany(mappedBy = "blockedUser")
-   // @JoinColumn(name = "blocked_user_id", nullable = false)
     private List<BlockedUser> blockedUsers;
 
     @OneToMany(mappedBy = "user")
     private List<BlockedUser> usersBlocked;
 
     @OneToMany(mappedBy = "reportedUser")
-    // @JoinColumn(name = "blocked_user_id", nullable = false)
     private List<ReportedUser> reportedUsers;
 
     @OneToMany(mappedBy = "user")
     private List<ReportedUser> usersReported;
-
-//    @OneToMany(mappedBy = "reportedUser")
-//    private Set<ReportedUser> reportedUsers;
 
     @OneToMany(
             mappedBy = "user",
@@ -143,8 +127,8 @@ public class User {
         this.nickname = nickname;
         this.password = password;
     }
-    public List<User> addToFriendlist(User friend)
-    {
+
+    public List<User> addToFriendlist(User friend) {
         this.friendlist.add(friend);
         return friendlist;
     }

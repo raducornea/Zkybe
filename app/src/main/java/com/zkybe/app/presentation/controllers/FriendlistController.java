@@ -1,7 +1,6 @@
 package com.zkybe.app.presentation.controllers;
 
 import com.zkybe.app.business.services.FriendlistService;
-import com.zkybe.app.dtos.DeletedGroupDTO;
 import com.zkybe.app.dtos.FriendlistDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;

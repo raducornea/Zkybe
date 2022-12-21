@@ -45,12 +45,6 @@ public class Group {
     @OneToMany(mappedBy = "received")
     private List<Message> messages;
 
-
-    //@PrimaryKeyJoinColumn
-//    @JsonIgnore
-//    @OneToOne(mappedBy = "group",cascade = CascadeType.ALL)
-//    private DeletedGroup deletedGroup;
-
     @JsonIgnore
     @OneToOne(mappedBy = "group", cascade = CascadeType.ALL)
     //@PrimaryKeyJoinColumn
@@ -61,12 +55,6 @@ public class Group {
             orphanRemoval = true
     )
     private List<UserGroup> users = new ArrayList<>();
-
-//    public void addUser(User user) {
-//        UserGroup userGroup = new UserGroup(user, this);
-//        users.add(userGroup);
-//        user.getGroups().add(userGroup);
-//    }
 
     public void removeUser(User user) {
         for (Iterator<UserGroup> iterator = users.iterator();
@@ -81,8 +69,8 @@ public class Group {
             }
         }
     }
-    public Group(GroupDTO groupDTO)
-    {
+
+    public Group(GroupDTO groupDTO) {
         this.id = groupDTO.getId();
         this.groupPicture = groupDTO.getGroupPicture();
         this.name = groupDTO.getName();

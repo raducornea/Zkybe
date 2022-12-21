@@ -29,11 +29,8 @@ public class DeletedGroup {
     @Column(name = "deletion_date")
     private Date deletionDate;
 
-    public DeletedGroup(DeletedGroupDTO deletedGroupDTO)
-    {
+    public DeletedGroup(DeletedGroupDTO deletedGroupDTO) {
         this.groupId = deletedGroupDTO.getIdGroup();
         this.deletionDate = deletedGroupDTO.getDeletionDate();
-        //this.group = group;
-        //this.group = group;
     }
 }

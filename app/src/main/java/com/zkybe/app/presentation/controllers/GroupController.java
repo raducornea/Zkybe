@@ -2,7 +2,6 @@ package com.zkybe.app.presentation.controllers;
 
 import com.zkybe.app.business.services.GroupService;
 import com.zkybe.app.dtos.GroupDTO;
-import com.zkybe.app.dtos.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

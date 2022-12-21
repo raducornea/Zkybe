@@ -20,8 +20,9 @@ public class UserGroupController {
     public List<UserGroupDTO> getAllUserGroups() {
         return userGroupService.getAllUserGroups();
     }
+
     @PutMapping("/add_user_to_group")
-    public ResponseEntity<UserGroupDTO> addUserToGroup(@RequestBody UserGroupDTO userGroupDTO){
+    public ResponseEntity<UserGroupDTO> addUserToGroup(@RequestBody UserGroupDTO userGroupDTO) {
         return new ResponseEntity<>(userGroupService.addUserGroup(userGroupDTO), new HttpHeaders(), HttpStatus.OK);
     }
 }

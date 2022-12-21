@@ -27,10 +27,10 @@ public class UserGroupService {
                 .map(ug -> userGroupMapper.mapToDto(ug))
                 .collect(Collectors.toList());
     }
-    public UserGroupDTO addUserGroup(UserGroupDTO userGroupDTO)
-    {
+
+    public UserGroupDTO addUserGroup(UserGroupDTO userGroupDTO) {
         return userGroupMapper.mapToDto(userGroupRepository
-                .save(userGroupMapper.mapToModel(userGroupDTO,userRepository,groupRepository)));
+                .save(userGroupMapper.mapToModel(userGroupDTO, userRepository, groupRepository)));
     }
 
 }

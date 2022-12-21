@@ -19,10 +19,10 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name="id_sender")
+    @Column(name = "id_sender")
     private Integer idSender;
 
-    @Column(name="id_receiver")
+    @Column(name = "id_receiver")
     private Integer idReceiver;
 
     @ManyToOne
@@ -43,14 +43,13 @@ public class Message {
     @Column(name = "time")
     private Time time;
 
-    public Message(MessageDTO messageDTO)
-    {
+    public Message(MessageDTO messageDTO) {
         this.id = messageDTO.getId();
         this.date = messageDTO.getDate();
         this.time = messageDTO.getTime();
         this.content = messageDTO.getContent();
-        this.idSender= messageDTO.getIdSender();
-        this.idReceiver= messageDTO.getIdReceivers();
+        this.idSender = messageDTO.getIdSender();
+        this.idReceiver = messageDTO.getIdReceivers();
     }
 
 }

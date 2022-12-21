@@ -26,23 +26,24 @@ public class UserPreferencesService {
                 .map(preferences -> userPreferencesMapper.mapToDto(preferences))
                 .collect(Collectors.toList());
     }
-    public Optional<UserPreferencesDTO> getUserPreferences(Integer id)
-    {
+
+    public Optional<UserPreferencesDTO> getUserPreferences(Integer id) {
         return userPreferencesRepository.findById(id)
                 .map(userPref -> userPreferencesMapper.mapToDto(userPref));
 
     }
-    public int updateTheme(Integer id, String theme)
-    {
-        return userPreferencesRepository.updateTheme(id,theme);
+
+    public int updateTheme(Integer id, String theme) {
+        return userPreferencesRepository.updateTheme(id, theme);
     }
-    public int updateNotifications(Integer id, Boolean notifications)
-    {
-        return userPreferencesRepository.updateNotifications(id,notifications);
+
+    public int updateNotifications(Integer id, Boolean notifications) {
+        return userPreferencesRepository.updateNotifications(id, notifications);
     }
+
     public UserPreferencesDTO addUserPreferences(UserPreferencesDTO userPreferencesDTO) {
-        System.out.println("ID-ul care cica e null: "+userPreferencesDTO.getId());
-        System.out.println("ar trebui sa mearga "+userRepository.findById(userPreferencesDTO.getId()).get().getId());
+        System.out.println("ID-ul care cica e null: " + userPreferencesDTO.getId());
+        System.out.println("ar trebui sa mearga " + userRepository.findById(userPreferencesDTO.getId()).get().getId());
         return userPreferencesMapper.mapToDto(userPreferencesRepository
                 .save(userPreferencesMapper.mapToModel(userPreferencesDTO)));
 

@@ -24,9 +24,9 @@ public class BlockedUserService {
                 .map(blocked -> blockedUserMapper.mapToDto(blocked))
                 .collect(Collectors.toList());
     }
-    public BlockedUserDTO addBlockedUser(BlockedUserDTO blockedUserDTO)
-    {
+
+    public BlockedUserDTO addBlockedUser(BlockedUserDTO blockedUserDTO) {
         return blockedUserMapper.mapToDto(blockedUserRepository
-                .save(blockedUserMapper.mapToModel(blockedUserDTO,userRepository)));
+                .save(blockedUserMapper.mapToModel(blockedUserDTO, userRepository)));
     }
 }

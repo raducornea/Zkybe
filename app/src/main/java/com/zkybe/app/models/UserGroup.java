@@ -1,6 +1,5 @@
 package com.zkybe.app.models;
 
-import com.zkybe.app.dtos.UserGroupDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -36,8 +35,9 @@ public class UserGroup {
         this.id = new UserGroupId(user.getId(), group.getId());
         this.role = role;
     }
+
     public UserGroup(Optional<User> user, Optional<Group> group, String role) {
-        if(user.isPresent() && group.isPresent()) {
+        if (user.isPresent() && group.isPresent()) {
             user.ifPresent(value -> this.user = value);
             group.ifPresent(value -> this.group = value);
             this.id = new UserGroupId(user.get().getId(), group.get().getId());

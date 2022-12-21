@@ -1,6 +1,5 @@
 package com.zkybe.app.business.services;
 
-import com.zkybe.app.dtos.GroupDTO;
 import com.zkybe.app.dtos.MessageDTO;
 import com.zkybe.app.persistence.mappers.MessageMapper;
 import com.zkybe.app.persistence.repositories.MessageRepository;
@@ -22,6 +21,7 @@ public class MessageService {
                 .map(message -> messageMapper.mapToDto(message))
                 .collect(Collectors.toList());
     }
+
     public MessageDTO addMessage(MessageDTO messageDTO) {
         return messageMapper.mapToDto(messageRepository
                 .save(messageMapper.mapToModel(messageDTO)));

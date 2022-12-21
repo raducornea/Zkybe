@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-public interface ProfileRepository  extends JpaRepository<UserProfile,Integer> {
+public interface ProfileRepository extends JpaRepository<UserProfile, Integer> {
     @Transactional
     @Modifying
     @Query(value = "UPDATE profiles SET status = ?2 WHERE user_id = ?1 ;", nativeQuery = true)

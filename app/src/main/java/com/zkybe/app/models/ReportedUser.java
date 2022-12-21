@@ -3,7 +3,6 @@ package com.zkybe.app.models;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -17,7 +16,6 @@ import java.util.Optional;
 @IdClass(ReportedUserId.class)
 public class ReportedUser implements Serializable {
     @Id
-   // @Column(name = "user_id")
     private Integer userId;
 
     @Id
@@ -27,15 +25,14 @@ public class ReportedUser implements Serializable {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "reported_user_id", nullable = false,insertable = false, updatable = false)
+    @JoinColumn(name = "reported_user_id", nullable = false, insertable = false, updatable = false)
     private User reportedUser;
 
     @Column(name = "report_content")
     private String reportContent;
 
     public ReportedUser(Optional<User> userId, Optional<User> reportedUserId, String content) {
-        if(userId.isPresent() && reportedUserId.isPresent())
-        {
+        if (userId.isPresent() && reportedUserId.isPresent()) {
             this.user = userId.get();
             this.reportedUser = reportedUserId.get();
             this.userId = userId.get().getId();

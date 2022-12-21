@@ -23,8 +23,8 @@ public class UserProfile {
 
     @JsonIgnore
     @OneToOne
-   // @MapsId
-    @JoinColumn(name = "user_id",nullable = false, insertable = false, updatable = false)
+    // @MapsId
+    @JoinColumn(name = "user_id", nullable = false, insertable = false, updatable = false)
     private User user;
 
 
@@ -45,7 +45,6 @@ public class UserProfile {
 
     public UserProfile(UserProfileDTO userProfileDTO) {
         this.id = userProfileDTO.getId();
-       // this.user = new User(userProfileDTO.getId(), userProfileDTO.getNickname(), userProfileDTO.getPassword());
         this.profilePicture = userProfileDTO.getProfilePicture();
         this.status = userProfileDTO.getStatus();
         this.lastName = userProfileDTO.getLastName();

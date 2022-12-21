@@ -1,7 +1,6 @@
 package com.zkybe.app.business.services;
 
 import com.zkybe.app.dtos.DeletedGroupDTO;
-import com.zkybe.app.dtos.UserDTO;
 import com.zkybe.app.persistence.mappers.DeletedGroupMapper;
 import com.zkybe.app.persistence.repositories.DeletedGroupRepository;
 import com.zkybe.app.persistence.repositories.GroupRepository;
@@ -27,11 +26,10 @@ public class DeletedGroupService {
     }
 
     public DeletedGroupDTO addDeletedGroup(DeletedGroupDTO deletedGroupDTO) throws Exception {
-        if(groupRepository.findById(deletedGroupDTO.getIdGroup()).isPresent()) {
+        if (groupRepository.findById(deletedGroupDTO.getIdGroup()).isPresent()) {
             System.out.println(deletedGroupDTO.getIdGroup());
             return deletedGroupMapper.mapToDto(deletedGroupRepository
                     .save(deletedGroupMapper.mapToModel(deletedGroupDTO)));
-        }
-        else throw new Exception("group not found");
+        } else throw new Exception("group not found");
     }
 }

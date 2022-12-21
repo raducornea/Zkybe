@@ -20,12 +20,6 @@ import java.util.stream.Collectors;
 @Table(name = "blocked_users")
 @IdClass(BlockedUserId.class)
 public class BlockedUser implements Serializable {
-//    @Id
-//    @Column(name = "user_id")
-//    private Integer userId;
-//    @EmbeddedId
-//    private BlockedUserId id;
-
     @Id
     private Integer userId;
 
@@ -33,19 +27,17 @@ public class BlockedUser implements Serializable {
     private Integer blockedUserId;
 
     @ManyToOne
-   // @Id
     @JoinColumn(name = "user_id", nullable = false, insertable = false, updatable = false)
     private User user;
 
     @ManyToOne
-   // @Id
+    // @Id
     @JoinColumn(name = "blocked_user_id", nullable = false, insertable = false, updatable = false)
     private User blockedUser;
 
 
-    public BlockedUser(Optional<User> uuser, Optional<User> blockedUser)
-    {
-        if(uuser.isPresent() && blockedUser.isPresent()) {
+    public BlockedUser(Optional<User> uuser, Optional<User> blockedUser) {
+        if (uuser.isPresent() && blockedUser.isPresent()) {
             this.user = uuser.get();
             this.userId = uuser.get().getId();
             this.blockedUserId = blockedUser.get().getId();
@@ -53,6 +45,7 @@ public class BlockedUser implements Serializable {
             //this.id = new BlockedUserId(uuser.get().getId(), blockedUser.get().getId());
         }
     }
+
     public BlockedUser(Integer userId, Integer blockedUserId) {
         this.userId = userId;
         this.blockedUserId = blockedUserId;

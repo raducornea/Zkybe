@@ -1,6 +1,5 @@
 package com.zkybe.app.business.services;
 
-import com.zkybe.app.dtos.BlockedUserDTO;
 import com.zkybe.app.dtos.ReportedUserDTO;
 import com.zkybe.app.persistence.mappers.ReportedUserMapper;
 import com.zkybe.app.persistence.repositories.ReportedUserRepository;
@@ -25,9 +24,9 @@ public class ReportedUserService {
                 .map(reported -> reportedUserMapper.mapToDto(reported))
                 .collect(Collectors.toList());
     }
-    public ReportedUserDTO addReportedUser(ReportedUserDTO reportedUserDTO)
-    {
+
+    public ReportedUserDTO addReportedUser(ReportedUserDTO reportedUserDTO) {
         return reportedUserMapper.mapToDto(reportedUserRepository
-                .save(reportedUserMapper.mapToModel(reportedUserDTO,userRepository)));
+                .save(reportedUserMapper.mapToModel(reportedUserDTO, userRepository)));
     }
 }
