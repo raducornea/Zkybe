@@ -21,7 +21,7 @@ public class UserPreferences {
 
     @JsonIgnore
     @OneToOne
-    @MapsId
+    //@MapsId
     @JoinColumn(name = "user_id",nullable = false, insertable = false, updatable = false)
     private User user;
 

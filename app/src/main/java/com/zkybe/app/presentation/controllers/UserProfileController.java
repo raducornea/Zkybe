@@ -30,8 +30,9 @@ public class UserProfileController {
     }
 
     @PutMapping("users/{id}/create_profile")
-    public ResponseEntity<UserProfileDTO> createProfile(@RequestBody UserProfileRequest simpleUserProfileDto,
+    public ResponseEntity<UserProfileDTO> createProfile(@RequestBody UserProfileDTO simpleUserProfileDto,
                                                         @PathVariable Integer id) {
+        System.out.println();
         return userProfileService.createProfile(id, simpleUserProfileDto.getProfilePicture(),
                         simpleUserProfileDto.getStatus(), simpleUserProfileDto.getLastName(),
                         simpleUserProfileDto.getFirstName(), simpleUserProfileDto.getBirthdate())

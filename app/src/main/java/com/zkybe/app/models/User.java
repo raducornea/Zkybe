@@ -34,6 +34,16 @@ public class User {
     @OneToMany(mappedBy = "sender")
     private List<Message> receiverGroup;
 
+    public void setUserPreferences(UserPreferences userPreferences) {
+        this.userPreferences = userPreferences;
+        this.userPreferences.setUser(this);
+    }
+
+    public void setUserProfile(UserProfile userProfile) {
+        this.userProfile = userProfile;
+        this.userProfile.setUser(this);
+    }
+
     @JsonIgnore
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
