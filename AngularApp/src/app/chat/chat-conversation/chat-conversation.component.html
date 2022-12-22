@@ -68,8 +68,10 @@
         
         <!-- emoji browser-ul -->
         <mat-grid-tile [colspan]="3" [rowspan]="1" [style.background]="'#8ac53f'">
-            <!-- <mat-icon>tag_faces</mat-icon> -->
-            <app-chat-button [icon_name]="'tag_faces'"></app-chat-button>
+            <!-- nu sterge ngIf-ul, altfel nu mai apare iconita... -->
+            <div *ngIf="true;">
+                <app-chat-button [icon_name]="'tag_faces'"></app-chat-button>
+            </div>
         </mat-grid-tile>
         
         <!-- emoji-ul conversatiei -->
