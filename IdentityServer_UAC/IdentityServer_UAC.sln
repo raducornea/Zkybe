@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer_UAC", "IdentityServer_UAC\IdentityServer_UAC.csproj", "{0FC70B4E-2513-4F79-A798-2F429F18EEDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FC70B4E-2513-4F79-A798-2F429F18EEDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FC70B4E-2513-4F79-A798-2F429F18EEDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FC70B4E-2513-4F79-A798-2F429F18EEDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FC70B4E-2513-4F79-A798-2F429F18EEDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0917E24B-B49D-468D-A618-AA0951E64186}
+	EndGlobalSection
+EndGlobal
