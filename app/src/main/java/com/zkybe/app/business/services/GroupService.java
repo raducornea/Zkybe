@@ -21,5 +21,11 @@ public class GroupService {
                 .map(group -> groupMapper.mapToDto(group))
                 .collect(Collectors.toList());
     }
+
+    public GroupDTO addGroup(GroupDTO groupDTO) {
+        return groupMapper.mapToDto(groupRepository
+                .save(groupMapper.mapToModel(groupDTO)));
+    }
+
 }
 

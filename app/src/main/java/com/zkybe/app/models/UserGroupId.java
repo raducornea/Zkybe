@@ -37,4 +37,5 @@ public class UserGroupId implements Serializable {
     public int hashCode() {
         return Objects.hash(idUser, idGroup);
     }
+
 }

@@ -1,6 +1,7 @@
 package com.zkybe.app.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.zkybe.app.models.FriendList;
 import com.zkybe.app.models.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,11 +18,16 @@ public class FriendlistDTO {
     private Integer userId;
 
     @JsonProperty("friend_id")
-    private List<Integer> friends;
+    private Integer friendId;
 
-    public FriendlistDTO(User user) {
-        this.userId = user.getId();
-        this.friends = user.getFriendlist().stream().map(User::getId).collect(Collectors.toList());
+    public FriendlistDTO(FriendList friendList) {
+        this.userId = friendList.getUserId();
+        this.friendId = friendList.getFriendId();
 
+    }
+
+    public FriendlistDTO(Integer userId, Integer friendId) {
+        this.userId = userId;
+        this.friendId = friendId;
     }
 }

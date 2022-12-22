@@ -3,9 +3,10 @@ package com.zkybe.app.presentation.controllers;
 import com.zkybe.app.business.services.FriendRequestService;
 import com.zkybe.app.dtos.FriendRequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,4 +20,10 @@ public class FriendRequestController {
     public List<FriendRequestDTO> getAllFriendRequests() {
         return friendRequestService.getFriendRequests();
     }
+
+    @PutMapping("/{id}/send_friend_request/{idFriend}")
+    public ResponseEntity<FriendRequestDTO> addFriend(@PathVariable Integer id, @PathVariable Integer idFriend) throws Exception {
+        return new ResponseEntity<>(friendRequestService.sendFriendRequest(id, idFriend), new HttpHeaders(), HttpStatus.OK);
+    }
+
 }

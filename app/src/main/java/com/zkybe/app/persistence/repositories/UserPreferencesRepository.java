@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-public interface UserPreferencesRepository extends JpaRepository<UserPreferences,Integer> {
+public interface UserPreferencesRepository extends JpaRepository<UserPreferences, Integer> {
     @Transactional
     @Modifying
     @Query(value = "UPDATE user_preferences SET theme = ?2 WHERE user_id = ?1 ;", nativeQuery = true)

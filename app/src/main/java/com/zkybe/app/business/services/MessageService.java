@@ -21,4 +21,9 @@ public class MessageService {
                 .map(message -> messageMapper.mapToDto(message))
                 .collect(Collectors.toList());
     }
+
+    public MessageDTO addMessage(MessageDTO messageDTO) {
+        return messageMapper.mapToDto(messageRepository
+                .save(messageMapper.mapToModel(messageDTO)));
+    }
 }

@@ -16,8 +16,12 @@ public class ReportedUserDTO {
     @JsonProperty("reported_user_id")
     private Integer reportedUserId;
 
+    @JsonProperty("content")
+    private String content;
+
     public ReportedUserDTO(ReportedUser reportedUser) {
         this.userId = reportedUser.getUserId();
-        this.reportedUserId = reportedUser.getReportedUser().getId();
+        this.reportedUserId = reportedUser.getReportedUserId();
+        this.content = reportedUser.getReportContent();
     }
 }

@@ -9,4 +9,8 @@ public class UserPreferencesMapper {
     public UserPreferencesDTO mapToDto(UserPreferences userPreferences) {
         return new UserPreferencesDTO(userPreferences);
     }
+
+    public UserPreferences mapToModel(UserPreferencesDTO userPreferencesDTO) {
+        return new UserPreferences(userPreferencesDTO);
+    }
 }

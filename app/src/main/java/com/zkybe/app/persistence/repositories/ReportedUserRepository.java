@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ReportedUserRepository extends JpaRepository<ReportedUser,Integer> {
+public interface ReportedUserRepository extends JpaRepository<ReportedUser, Integer> {
 }

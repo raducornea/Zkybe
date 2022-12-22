@@ -1,7 +1,6 @@
 package com.zkybe.app.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.zkybe.app.models.Group;
 import com.zkybe.app.models.Message;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,8 +8,6 @@ import lombok.Setter;
 
 import java.sql.Time;
 import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Getter
 @Setter
@@ -36,8 +33,8 @@ public class MessageDTO {
 
     public MessageDTO(Message message) {
         this.id = message.getId();
-        this.idSender = message.getSender().getId();
-        this.idReceivers = message.getReceived().getId();
+        this.idSender = message.getIdSender();
+        this.idReceivers = message.getIdReceiver();
         this.content = message.getContent();
         this.date = message.getDate();
         this.time = message.getTime();

@@ -10,13 +10,13 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class UserPreferencesDTO {
-    @JsonProperty
+    @JsonProperty("user_id")
     private Integer id;
 
-    @JsonProperty
+    @JsonProperty("theme")
     private String theme;
 
-    @JsonProperty
+    @JsonProperty("notifications")
     private Boolean notifications;
 
     public UserPreferencesDTO(UserPreferences userPreferences) {
