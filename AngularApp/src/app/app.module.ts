@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { environment } from 'src/environments/environment';
+import { AuthModule, LogLevel } from 'angular-auth-oidc-client';
 
 
 @NgModule({
@@ -28,6 +30,23 @@ import { MatInputModule } from '@angular/material/input';
   ],
   // de pus modulele aici
   imports: [
+    AuthModule.forRoot({
+      config: [
+        {
+          configId: 'frontend',
+          authority: environment.authUrl,
+          redirectUrl: window.location.origin,
+          postLogoutRedirectUri: window.location.origin,
+          clientId: 'zkybe.web',
+          scope: 'openid zkybe.users zkybe.admin',
+          responseType: 'code',
+          disablePkce: false,
+          silentRenew: true,
+          useRefreshToken: true,
+          logLevel: environment.production==true ? LogLevel.None : LogLevel.Debug,
+        }
+      ]
+    }),
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
