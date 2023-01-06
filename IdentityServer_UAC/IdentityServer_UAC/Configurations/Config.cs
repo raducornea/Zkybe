@@ -26,22 +26,22 @@ namespace IdentityServer_UAC.Configurations
         public static IEnumerable<Client> Clients =>
             new Client[]
             {
-                new Client // TODO: configure redirects and CORS
+                new Client
                 {
                     ClientId = "zkybe.web",
                     ClientName = "Zkybe Web Client",
                     RequireClientSecret = false,
                     RequirePkce = true,
                     AllowedGrantTypes = GrantTypes.Code,
-                    RedirectUris = new[] { "" },
-                    PostLogoutRedirectUris = new[] { "" },
+                    RedirectUris = new[] { "http://localhost:4200", "https://localhost:4200" },
+                    PostLogoutRedirectUris = new[] { "http://localhost:4200", "https://localhost:4200" },
                     AllowedScopes = new []
                     {
                         "openid",
                         "zkybe.users",
                         "zkybe.admin"
                     },
-                    AllowedCorsOrigins = new[] { "" }
+                    AllowedCorsOrigins = new[] { "http://localhost:4200", "https://localhost:4200" }
                 },
 
                 new Client // TODO: configure redirects and CORS
