@@ -1,8 +1,27 @@
 <mat-toolbar class="header_detail">
-    <a class="logo"><img src="assets/img/logo.png"></a>
-    <a mat-button  routerLink=""> Home</a>
-    <a mat-button (click)="onLogin();">Login</a>
-    <a mat-button routerLink="/register">Register</a>
+    <span>
+        <a class="logo"><img src="assets/img/logo.png"></a>
+    </span>
+
+    <span>
+        <a mat-button  routerLink=""> Home</a>
+    </span>
+
+    <span>
+        <a mat-button (click)="onLogin();">Login</a>
+    </span>
+
+    <span>
+        <a mat-button routerLink="/register">Register</a>
+    </span>
+
+    <span class="username">
+        {{user?.username}}
+    </span>
+
+    <span *ngIf="user != null;">
+        <a mat-button (click)="onLogout();">Logout</a>
+    </span>
 
 </mat-toolbar>
 <!-- <nav class="header_detail">

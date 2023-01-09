@@ -31,8 +31,11 @@ export class AppComponent {
   }
 
   logout() {
-    this.oidcSecurityService.logoff();
+    this.oidcSecurityService.logoff().subscribe(result => {
+      console.log(result);
+    })
     this.currentUser = null;
+    console.log("user logged out!");
   }
 
 }
