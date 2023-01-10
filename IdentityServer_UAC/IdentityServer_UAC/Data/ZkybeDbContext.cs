@@ -10,13 +10,5 @@ namespace IdentityServer_UAC.Data
         {
 
         }
-
-        // protected override void OnModelCreating(ModelBuilder modelBuilder)
-        // {
-        //     modelBuilder.Entity<User>()
-        //         .Property(u => u.Id).HasConversion<Int32>();
-        // 
-        //     base.OnModelCreating(modelBuilder);
-        // }
     }
 }

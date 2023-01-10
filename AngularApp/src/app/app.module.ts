@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { MatButtonModule, MatCardModule, MatToolbarModule } from '@angular/material';
@@ -17,6 +18,10 @@ import { MatInputModule } from '@angular/material/input';
 import { ChatButtonComponent } from './chat/chat-button/chat-button.component';
 import { ChatMessagesComponent } from './chat-messages/chat-messages.component';
 
+import { environment } from 'src/environments/environment';
+import { AuthModule, LogLevel } from 'angular-auth-oidc-client';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   // de pus componentele aici
@@ -32,6 +37,23 @@ import { ChatMessagesComponent } from './chat-messages/chat-messages.component';
   ],
   // de pus modulele aici
   imports: [
+    AuthModule.forRoot({
+      config: [
+        {
+          configId: 'frontend',
+          authority: environment.authUrl,
+          redirectUrl: window.location.origin,
+          postLogoutRedirectUri: window.location.origin,
+          clientId: 'zkybe.web',
+          scope: 'openid zkybe.users zkybe.admin',
+          responseType: 'code',
+          disablePkce: false,
+          logLevel: environment.production==true ? LogLevel.None : LogLevel.Debug,
+        }
+      ]
+    }),
+    MatSnackBarModule,
+    BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
@@ -43,6 +65,7 @@ import { ChatMessagesComponent } from './chat-messages/chat-messages.component';
     ReactiveFormsModule,
     MatIconModule,
     MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
