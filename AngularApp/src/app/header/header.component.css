@@ -1,13 +1,22 @@
-.mat-button{
+.button{
     font-size: x-large;
     font-weight: bold;
-   
+ }
+
+ .logo {
+   margin-top: 15px;
  }
 
  mat-toolbar {
     background: rgb(0, 4, 4);
     color: #8AC53F;
     
+ }
+
+ .icon-holder { 
+   display: flex;
+   align-items: center;
+   justify-content: center;
  }
 
  .header_detail{
