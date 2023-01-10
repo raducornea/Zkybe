@@ -50,13 +50,7 @@ import { ChatService } from "../services/websocket.service";
 
 @Component({
     selector: 'app-chat-messages',
-    template: `
-        <div *ngFor="let message of messages">
-            <p>{{ message }}</p>
-        </div>
-        <input [(ngModel)]="newMessage" (keyup.enter)="sendMessage()" placeholder="Type your message here">
-        <button (click)="sendMessage()">Send</button>
-    `,
+    templateUrl: './chat-messages.component.html',
     styleUrls: ['./chat-messages.component.css'],
     providers: [ChatService]
 })
