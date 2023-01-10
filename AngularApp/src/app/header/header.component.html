@@ -1,8 +1,67 @@
 <mat-toolbar class="header_detail">
-    <a class="logo"><img src="assets/img/logo.png"></a>
-    <a mat-button  routerLink=""> Home</a>
-    <a mat-button>Login</a>
-    <a mat-button routerLink="/register">Register</a>
+    <span>
+        <a routerLink="">
+            <img class="logo" src="assets/img/logo.png">
+        </a>
+    </span>
+
+    <span>
+        <a mat-button routerLink="" class="button" >
+            <div class="icon-holder">
+                <mat-icon>home</mat-icon>
+                Home
+            </div>
+        </a>
+    </span>
+
+    <span *ngIf="user == null;">
+        <a mat-button (click)="onLogin();" class="button">
+            <div class="icon-holder">
+                <mat-icon>account_circle</mat-icon>
+                Login
+            </div>
+        </a>
+    </span>
+
+    <span *ngIf="user == null;">
+        <a mat-button routerLink="/register" class="button">
+            <div class="icon-holder">
+                <mat-icon>assignment_ind</mat-icon>
+                Register
+            </div>
+        </a>
+    </span>
+
+    <span *ngIf="user != null;">
+        <a mat-button routerLink="/chat" class="button">
+            <div class="icon-holder">
+                <mat-icon>chat</mat-icon>
+                Chat
+            </div>
+        </a>
+    </span>
+
+    <span *ngIf="user != null;">
+        <a mat-button routerLink="/friends" class="button">
+            <div class="icon-holder">
+                <mat-icon>contacts</mat-icon>
+                Friends
+            </div>
+        </a>
+    </span>
+
+    <span class="username">
+        {{user?.username}}
+    </span>
+
+    <span *ngIf="user != null;">
+        <a mat-button (click)="onLogout();" class="button">
+            <div class="icon-holder">
+                <mat-icon>directions_run</mat-icon>
+                Logout
+            </div>
+        </a>
+    </span>
 
 </mat-toolbar>
 <!-- <nav class="header_detail">

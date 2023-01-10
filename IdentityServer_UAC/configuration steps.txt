@@ -1,0 +1,31 @@
+
+- instalati MS SQL Server, fie local, fie pe o masina virtuala, fie un container docker
+pentru container docker, rulati comanda: 
+
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=parola" -p 1433:1433 --name container_name -d mcr.microsoft.com/mssql/server:2017-latest
+
+inlocuiti parola cu parola pentru server, ex: Parola123$
+atentie la parola: 
+The password must be at least 8 characters long and contain characters from three of the following four sets: Uppercase letters, Lowercase letters, Base 10 digits, and Symbols.. 
+altfel container-ul nu porneste!
+inlocuiti container_name cu numele container-ului
+
+- optional: instalati Sql Management Studio pentru o interfata cu baza de date
+
+- daca container-ul merge,
+modificati appsettings.json din
+...\proiect-paw-tinerii-titani\IdentityServer_UAC\IdentityServer_UAC\appsettings.json
+
+la "IdentityServerDB" puneti connection string-ul de la SQL Server, daca e pe docker ar trebui sa arate cam asa: 
+"Server=localhost,1433; Initial Catalog=IdentityServerDb; Encrypt=False; User Id=SA; Password=Parola123$"
+
+la "ZkybeDB" puneti connection string-ul de la MariaDB, care e si pentru server-ul in spring
+
+- dupa navigati la ...\proiect-paw-tinerii-titani\IdentityServer_UAC\IdentityServer_UAC
+si rulati comenzile:
+dotnet ef database update -c ConfigurationDbContext
+dotnet ef database update -c PersistedGrantDbContext
+
+- daca totul e bine, ar trebui sa va apara un build succeed si cateva instructiuni SQL dupa fiecare comanda rulata
+
+- server-ul ar trebui sa poata rula acum, daca aveti probleme spuneti pe grup

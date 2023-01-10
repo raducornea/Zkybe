@@ -8,16 +8,19 @@ mat-card {
    
 }
 
-/* .mat-toolbar {
-    background: rgb(0, 4, 4);
-    color: #8AC53F;
- }
+.bg {
+   /* The image used */
+  background-image: url("/assets/img/Background.jpg");
 
- .mat-button{
-    font-size: x-large;
-    font-weight: bold;
-   
- } */
+  /* Full height */
+  height: 100vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
  h1{
     font-size: xx-large;
@@ -27,4 +30,7 @@ mat-card {
  .img_landingpage{
    position: absolute;
    width: 100%;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
  }
