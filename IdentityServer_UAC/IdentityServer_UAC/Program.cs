@@ -1,5 +1,7 @@
 using IdentityServer_UAC.Configurations;
 using IdentityServer_UAC.Data;
+using IdentityServer_UAC.Data.Interfaces;
+using IdentityServer_UAC.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging.Console;
 using System.Reflection;
@@ -38,6 +40,8 @@ builder.Services.AddDbContext<ZkybeDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("ZkybeDB"), serverVersion);
 });
 
+builder.Services.AddTransient<IUserRepository, UserRepository>();
+
 builder.Services.AddIdentityServer(options =>
 {
     options.EmitStaticAudienceClaim = true;
@@ -61,7 +65,7 @@ builder.Services.AddIdentityServer(options =>
     })
     .AddProfileService<ProfileService>()
     .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>();
-    //.AddTestUsers(Config.Users.ToList()); // TODO: Add ProfileService
+    //.AddTestUsers(Config.Users.ToList());
 
 
 var app = builder.Build();
