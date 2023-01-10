@@ -1,0 +1,14 @@
+<p>chat-messages works! {{conversationId[0]}}</p>
+
+<div class="chat-container">
+    <div class="messages">
+      <div *ngFor="let message of messages$ | async">
+        {{ message }}
+      </div>
+    </div>
+
+    <form (submit)="sendMessage()">
+      <input [(ngModel)]="msg" name="msg" required />
+      <button type="submit">Send</button>
+    </form>
+</div>

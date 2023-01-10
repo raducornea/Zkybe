@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ChatButtonComponent } from './chat/chat-button/chat-button.component';
+import { ChatMessagesComponent } from './chat-messages/chat-messages.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ChatButtonComponent } from './chat/chat-button/chat-button.component';
     ChatConversationComponent,
     RegisterComponent,
     HeaderComponent,
-    ChatButtonComponent
+    ChatButtonComponent,
+    ChatMessagesComponent
   ],
   // de pus modulele aici
   imports: [
