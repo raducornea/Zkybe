@@ -26,6 +26,10 @@ const routes: Routes = [
     // localhost:4200/header
     { 
       path: 'header', component: HeaderComponent
+    },
+    // localhost:4200/*
+    { 
+      path: '**', redirectTo: '' 
     }
 ];
 

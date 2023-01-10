@@ -12,12 +12,12 @@ export class AppComponent {
 
   currentUser: User | null = null;
 
-  constructor(public oidcSecurityService: OidcSecurityService) {
+  constructor(private _oidcSecurityService: OidcSecurityService) {
 
   }
 
   async ngOnInit() {
-    this.oidcSecurityService.checkAuth().subscribe(async ({ isAuthenticated, userData, idToken, accessToken }) => {
+    this._oidcSecurityService.checkAuth().subscribe(async ({ isAuthenticated, userData, idToken, accessToken }) => {
       if (accessToken != null && accessToken != undefined) {
         this.currentUser = new User(userData.username, "userData.role");
         console.log(this.currentUser);
@@ -27,11 +27,11 @@ export class AppComponent {
   }
 
   login() {
-    this.oidcSecurityService.authorize();
+    this._oidcSecurityService.authorize();
   }
 
   logout() {
-    this.oidcSecurityService.logoff().subscribe(result => {
+    this._oidcSecurityService.logoff().subscribe(result => {
       console.log(result);
     })
     this.currentUser = null;
