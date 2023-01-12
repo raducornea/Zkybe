@@ -4,34 +4,61 @@
 
 
 <div class="container">
-<form>
-    <img >
-      <h1>Register</h1>
-      <hr>
-      <label for="nickname"><b>Nickname</b></label>
-      <input type="text" placeholder="Enter Your Nickname" name="nickname" id="nickname" required>
-
-      <label for="firstName"><b>First Name</b></label>
-      <input type="text" placeholder="Enter First Name" name="firstName" id="firstName" required>
-
-      <label for="lastName"><b>Last Name</b></label>
-      <input type="text" placeholder="Enter Last Name" name="lastName" id="lastName" required>
-
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" id="email" required>
-  
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-  
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-      <hr>
-    </form>
-  
-      <button type="submit" class="register_btn">Register</button>
-
     
-    <div>
-      <p>  Already have an account? <a href="#">Login</a>.</p>
-    </div>
+  <h1>Register</h1>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Nickname</mat-label>
+    <input matInput [(ngModel)]="nickname" [formControl]="nicknameControl">
+    <mat-error *ngIf="nicknameControl.invalid">{{getNicknameErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>First Name</mat-label>
+    <input matInput [(ngModel)]="firstName" [formControl]="firstNameControl">
+    <mat-error *ngIf="firstNameControl.invalid">{{getFirstNameErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Last Name</mat-label>
+    <input matInput [(ngModel)]="lastName" [formControl]="lastNameControl">
+    <mat-error *ngIf="lastNameControl.invalid">{{getLastNameErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="email" [formControl]="emailControl">
+    <mat-error *ngIf="emailControl.invalid">{{getEmailErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Enter your password</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password"  [formControl]="passwordControl">
+    <mat-error *ngIf="passwordControl.invalid">{{getPasswordErrorMessage()}}</mat-error>
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Repeat your password</mat-label>
+    <input matInput [type]="hide2 ? 'password' : 'text'" [(ngModel)]="repeatPassword">
+    <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+      <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="onRegister();">
+    Register
+  </button>
+
+  <div *ngIf="registerErrorMessage != null" class="warning-message">
+    {{registerErrorMessage}}
   </div>
+
+  <div>
+    <p>Already have an account?
+      <a mat-stroked-button (click)="onLogin();">Login</a>
+    </p>
+  </div>
+</div>
