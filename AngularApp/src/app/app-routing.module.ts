@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ChatConversationComponent } from './chat/chat-conversation/chat-conversation.component';
 import { ChatInformationComponent } from './chat/chat-information/chat-information.component';
-import { HeaderComponent } from './header/header.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -24,12 +23,20 @@ const routes: Routes = [
     { 
       path: 'register', component: RegisterComponent
     },
-    // localhost:4200/header
+    // localhost:4200/profile
     { 
       path: 'header', component: HeaderComponent
     },
     { 
       path: 'my-profile', component: UserProfileComponent
+    },
+    // localhost:4200/search
+    { 
+      path: 'search', component: LandingpageComponent // todo: add search component
+    },
+    // localhost:4200/*
+    { 
+      path: '**', redirectTo: '' 
     }
 ];
 
