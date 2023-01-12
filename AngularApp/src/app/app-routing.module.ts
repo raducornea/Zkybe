@@ -4,6 +4,7 @@ import { ChatConversationComponent } from './chat/chat-conversation/chat-convers
 import { ChatInformationComponent } from './chat/chat-information/chat-information.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { RegisterComponent } from './register/register.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
     // localhost:4200/
@@ -24,7 +25,10 @@ const routes: Routes = [
     },
     // localhost:4200/profile
     { 
-      path: 'profile', component: LandingpageComponent // todo: add profile component
+      path: 'header', component: HeaderComponent
+    },
+    { 
+      path: 'my-profile', component: UserProfileComponent
     },
     // localhost:4200/search
     { 
