@@ -23,6 +23,14 @@ const routes: Routes = [
     { 
       path: 'register', component: RegisterComponent
     },
+    // localhost:4200/profile
+    { 
+      path: 'profile', component: LandingpageComponent // todo: add profile component
+    },
+    // localhost:4200/search
+    { 
+      path: 'search', component: LandingpageComponent // todo: add search component
+    },
     // localhost:4200/*
     { 
       path: '**', redirectTo: '' 
