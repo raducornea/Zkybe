@@ -4,6 +4,7 @@ import { ChatConversationComponent } from './chat/chat-conversation/chat-convers
 import { ChatInformationComponent } from './chat/chat-information/chat-information.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { RegisterComponent } from './register/register.component';
+import { SearchuserComponent } from './searchuser/searchuser.component';
 
 const routes: Routes = [
     // localhost:4200/
@@ -22,10 +23,15 @@ const routes: Routes = [
     { 
       path: 'register', component: RegisterComponent
     },
+     // localhost:4200/searchuser
+     { 
+      path: 'searchuser', component: SearchuserComponent
+    },
     // localhost:4200/*
     { 
       path: '**', redirectTo: '' 
-    }
+    },
+     
 ];
 
 
