@@ -31,6 +31,10 @@ const routes: Routes = [
     { 
       path: 'search', component: LandingpageComponent // todo: add search component
     },
+    // localhost:4200/friends
+    { 
+      path: 'friends', component: LandingpageComponent // todo: add friends component
+    },
     // localhost:4200/*
     { 
       path: '**', redirectTo: '' 
