@@ -25,10 +25,7 @@ const routes: Routes = [
     },
     // localhost:4200/profile
     { 
-      path: 'header', component: HeaderComponent
-    },
-    { 
-      path: 'my-profile', component: UserProfileComponent
+      path: 'profile', component: UserProfileComponent
     },
     // localhost:4200/search
     { 
