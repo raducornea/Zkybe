@@ -19,6 +19,7 @@ import { environment } from 'src/environments/environment';
 import { AuthModule, LogLevel } from 'angular-auth-oidc-client';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ListFriendsComponent } from './list-friends/list-friends.component';
 
 @NgModule({
   // de pus componentele aici
@@ -28,7 +29,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     ChatInformationComponent,
     ChatConversationComponent,
     RegisterComponent,
-    HeaderComponent
+    HeaderComponent,
+    ListFriendsComponent
   ],
   // de pus modulele aici
   imports: [
