@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/zkybe")
+@CrossOrigin(origins = "http://localhost:4200")
 public class MessageController {
     @Autowired
     private MessageService messageService;

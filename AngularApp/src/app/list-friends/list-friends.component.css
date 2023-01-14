@@ -1,7 +1,7 @@
 
 
   form.example input[type=text] {
-    padding: 10px;
+    padding: 15px;
     font-size: 17px;
     border: 1px solid grey;
     float: left;
@@ -12,7 +12,7 @@
   form.example button {
     float: left;
     width: 5%;
-    padding: 10px;
+    padding: 15px;
     background: #0c9019;
     color: white;
     font-size: 17px;
@@ -49,13 +49,13 @@
 
   legend {
     
-    font-size:30px;
+    font-size:40px;
     /* padding: 10px ; */
     color: rgb(2, 1, 1);
     
   }
   .icon-display {
-    transform: scale(1.2);
+    transform: scale(2);
  }
  .material-icons.color { color: #031203; }
 
@@ -64,7 +64,16 @@
   /* background-image: url("/assets/img/Background.jpg"); */
   background-color: rgb(169, 194, 159);
 
-  height: 100vh;
-  background-size: cover;
+  /* height: 300vh; */
+   /* Full height */
+   height: 300vh;
+
+   /* Center and scale the image nicely */
+   background-position: center;
+   background-repeat: repeat;
+   background-size: cover;
 }
 
+strong.profile{
+  font-size:20px;
+}
