@@ -22,6 +22,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { SearchuserComponent } from './searchuser/searchuser.component';
 import { FilterPipe} from './searchuser/shared/filter.pipe';
 
+
 @NgModule({
   // de pus componentele aici
   declarations: [
@@ -65,7 +66,7 @@ import { FilterPipe} from './searchuser/shared/filter.pipe';
     MatIconModule,
     MatInputModule,
     MatFormFieldModule,
-    MatListModule
+    MatListModule,
     
   ],
   providers: [],

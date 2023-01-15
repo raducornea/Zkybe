@@ -5,3 +5,8 @@
   outline: none;
 }
 
+.user{
+  float:left;
+  width:100px; 
+  margin-left:30px;
+}

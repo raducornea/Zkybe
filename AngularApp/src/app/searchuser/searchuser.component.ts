@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { listData } from './shared/list';
+import { SearchUserService } from '../services/SearchUserService';
 
 
 @Component({
@@ -7,22 +7,32 @@ import { listData } from './shared/list';
   templateUrl: './searchuser.component.html',
   styleUrls: ['./searchuser.component.css']
 })
-export class SearchuserComponent  {
+export class SearchuserComponent implements OnInit {
  
-  list = listData.reverse();
- 
+  
   searchText = '';
 
+  profiles: any;
+
   toggleSearch: boolean = false;
-  constructor() {
+  constructor(private service: SearchUserService) {
 
   }
 
   openSearch() {
     this.toggleSearch = true;
   }
+  
   searchClose() {
     this.searchText = '';
     this.toggleSearch = false;
   }
+  ngOnInit(){
+    this.service.getProfiles()
+    .subscribe(response => {
+      this.profiles = response;
+    });
+  }
+  
+  
 }
