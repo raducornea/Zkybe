@@ -1,0 +1,32 @@
+.user-profile-component{
+    /* background-color: rgb(212, 239, 216); */
+    background-image: url("https://img.freepik.com/premium-vector/vector-seamless-bright-pattern-color-design-green-foliage-background-endless-stylish-wicker-texture_547648-3867.jpg?w=2000");
+    /* background-image: url("https://img.freepik.com/free-vector/background-seamless-pattern-vector-with-cute-memphis_53876-105506.jpg?w=2000"); */
+    /* background-image: url("https://media.istockphoto.com/id/1083248656/vector/seamless-blue-zigzag-pattern-waves-background-for-childrens-bedroom-kids-nursery-cloth.jpg?s=612x612&w=0&k=20&c=nImzwR_ZjBFl4USXDKxGRCpHIjOsFmthT3RqCOlPKXM="); */
+    background-size: 1600px;
+    height: 100vh;
+}
+
+.container{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.mat-card{
+    background-color:#8AC53F;
+    width: 200px;
+    padding-bottom: 15px;
+}
+
+.user-profile-form{
+    align-items: center;
+}
+
+#userimg{
+    width: 260px;
+    height: 260px;
+    
+}
