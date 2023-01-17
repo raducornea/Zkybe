@@ -25,11 +25,15 @@ const routes: Routes = [
     },
     // localhost:4200/profile
     { 
-      path: 'profile', component: LandingpageComponent // todo: add profile component
+      path: 'profile', component: UserProfileComponent
     },
     // localhost:4200/search
     { 
       path: 'search', component: LandingpageComponent // todo: add search component
+    },
+    // localhost:4200/friends
+    { 
+      path: 'friends', component: LandingpageComponent // todo: add friends component
     },
     // localhost:4200/*
     { 

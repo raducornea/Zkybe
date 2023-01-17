@@ -15,11 +15,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 import { environment } from 'src/environments/environment';
 import { AuthModule, LogLevel } from 'angular-auth-oidc-client';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatFormFieldModule} from '@angular/material/form-field';import { UserProfileComponent } from './user-profile/user-profile.component';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   // de pus componentele aici
