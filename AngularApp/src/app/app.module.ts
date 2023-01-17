@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
-import { MatButtonModule, MatCardModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatToolbarModule , MatListModule} from '@angular/material';
 import { ChatInformationComponent } from './chat/chat-information/chat-information.component';
 import { ChatConversationComponent } from './chat/chat-conversation/chat-conversation.component';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -20,6 +20,9 @@ import { environment } from 'src/environments/environment';
 import { AuthModule, LogLevel } from 'angular-auth-oidc-client';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ListFriendsComponent } from './list-friends/list-friends.component';
+
+import { FilterPipe} from './list-friends/utils/filter.pipe'
 
 @NgModule({
   // de pus componentele aici
@@ -30,6 +33,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     ChatConversationComponent,
     RegisterComponent,
     HeaderComponent,
+    ListFriendsComponent,
+    FilterPipe
     UserProfileComponent
   ],
   // de pus modulele aici
@@ -62,7 +67,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     ReactiveFormsModule,
     MatIconModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

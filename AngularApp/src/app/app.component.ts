@@ -38,4 +38,7 @@ export class AppComponent {
     console.log("user logged out!");
   }
 
+  getCurrentUser(){
+    return this.currentUser;
+  }
 }
