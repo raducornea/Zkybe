@@ -5,8 +5,11 @@ import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
 export class ChatService {
   private socket$: WebSocketSubject<string>;
 
-  constructor() {
-    this.socket$ = webSocket('ws://localhost:8091/ws');
+  // constructor() {
+  //   this.socket$ = webSocket('ws://localhost:8091/ws');
+  // }
+  connect(roomId: number) {
+    this.socket$ = webSocket(`ws://localhost:8091/ws/${roomId}`);
   }
 
   sendMessage(message: string) {

@@ -33,7 +33,10 @@
 
         <!-- textul propriu-zis cu conversatia dintre useri -->
         <mat-grid-tile [colspan]="50" [rowspan]="5" [style.background]="'#D3D3D3'" [style.color]="'black'">
-            <app-chat-messages></app-chat-messages>
+            <div *ngFor="let message of messages">
+                <p>{{ message }}</p>
+            </div>
+            
         </mat-grid-tile>
 
 
@@ -56,7 +59,7 @@
             <!-- textul introdus la tastatura -->
             <!-- black and white color -->
             <mat-form-field class="text_area_for_chat_message" [style.background]="'#D3D3D3'" [style.color]="'black'">
-                <textarea matInput id="textarea_chat_message_input" (keyup)="onKey($event)" placeholder="Message"></textarea>
+                <textarea matInput id="textarea_chat_message_input" [(ngModel)]="newMessage" (keyup)="onKey($event)" (keyup.enter)="sendMessage()" placeholder="Message"></textarea>
             </mat-form-field>
 
         </mat-grid-tile>
@@ -72,12 +75,12 @@
         
         <!-- emoji-ul conversatiei -->
         <mat-grid-tile [colspan]="3" [rowspan]="1" [style.background]="'#8ac53f'">
-            <div class="emoji_container" *ngIf="textValue==''; else send_message">
+            <div class="emoji_container" *ngIf="newMessage==''; else send_message">
                 <app-chat-button [icon_name]="'thumb_up'"></app-chat-button>
             </div>
 
             <ng-template #send_message>
-                <app-chat-button [icon_name]="'send'"></app-chat-button>
+                <app-chat-button [icon_name]="'send'" (click)="sendMessage()"></app-chat-button>
             </ng-template>
         </mat-grid-tile>
 

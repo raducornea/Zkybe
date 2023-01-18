@@ -16,7 +16,6 @@ import { HeaderComponent } from './header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ChatButtonComponent } from './chat/chat-button/chat-button.component';
-import { ChatMessagesComponent } from './chat-messages/chat-messages.component';
 
 import { environment } from 'src/environments/environment';
 import { AuthModule, LogLevel } from 'angular-auth-oidc-client';
@@ -33,7 +32,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     RegisterComponent,
     HeaderComponent,
     ChatButtonComponent,
-    ChatMessagesComponent
   ],
   // de pus modulele aici
   imports: [
