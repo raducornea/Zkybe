@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/zkybe")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 public class UserProfileController {
     @Autowired
     private UserProfileService userProfileService;
