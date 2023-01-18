@@ -21,8 +21,9 @@ import { AuthModule, LogLevel } from 'angular-auth-oidc-client';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ListFriendsComponent } from './list-friends/list-friends.component';
-
 import { FilterPipe} from './list-friends/utils/filter.pipe'
+import { SearchuserComponent } from './searchuser/searchuser.component';
+
 
 @NgModule({
   // de pus componentele aici
@@ -35,7 +36,9 @@ import { FilterPipe} from './list-friends/utils/filter.pipe'
     HeaderComponent,
     ListFriendsComponent,
     FilterPipe,
-    UserProfileComponent
+    UserProfileComponent,
+    SearchuserComponent,
+    FilterPipe
   ],
   // de pus modulele aici
   imports: [
@@ -68,7 +71,8 @@ import { FilterPipe} from './list-friends/utils/filter.pipe'
     MatIconModule,
     MatInputModule,
     MatFormFieldModule,
-    MatListModule
+    MatListModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

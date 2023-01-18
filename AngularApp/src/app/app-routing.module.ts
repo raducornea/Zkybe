@@ -6,6 +6,7 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { ListFriendsComponent } from './list-friends/list-friends.component';
 import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { SearchuserComponent } from './searchuser/searchuser.component';
 
 const routes: Routes = [
     // localhost:4200/
@@ -30,7 +31,7 @@ const routes: Routes = [
     },
     // localhost:4200/search
     { 
-      path: 'search', component: LandingpageComponent // todo: add search component
+      path: 'search', component: SearchuserComponent
     },
     // localhost:4200/friends
     { 
@@ -39,7 +40,8 @@ const routes: Routes = [
     // localhost:4200/*
     { 
       path: '**', redirectTo: '' 
-    }
+    },
+     
 ];
 
 
