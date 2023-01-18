@@ -1,19 +1,39 @@
 import { Component, OnInit } from '@angular/core';
+import { OidcSecurityService } from 'angular-auth-oidc-client';
+import { ChatService } from "../../services/websocket.service";
+
 
 @Component({
   selector: 'app-chat-conversation',
   templateUrl: './chat-conversation.component.html',
-  styleUrls: ['./chat-conversation.component.css']
+  styleUrls: ['./chat-conversation.component.css'],
+  providers: [ChatService]
 })
 
 export class ChatConversationComponent implements OnInit {
-  textValue: string = "";
+  messages: string[] = [];
+  newMessage = '';
 
-  onKey(event: any){
-    this.textValue = event.target.value;
+  constructor(private chatService: ChatService, private _oidcSecurityService: OidcSecurityService) {}
+  
+  ngOnInit() {
+    // extract user id from client
+    this._oidcSecurityService.getAccessToken().subscribe(token => console.log(token));
+
+    this.chatService.connect(2);
+    this.chatService.getMessages().subscribe(message => {
+      this.messages.push(message);
+    });
   }
 
-  constructor() { }
-  ngOnInit(): void {
+  // for emoji button / send button
+  onKey(event: any){
+    this.newMessage = event.target.value;
+  }
+
+  // send functionality for the button
+  sendMessage() {
+    this.chatService.sendMessage(this.newMessage);
+    this.newMessage = '';
   }
 }

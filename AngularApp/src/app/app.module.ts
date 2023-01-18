@@ -16,6 +16,8 @@ import { HeaderComponent } from './header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ChatButtonComponent } from './chat/chat-button/chat-button.component';
+
 import { environment } from 'src/environments/environment';
 import { AuthModule, LogLevel } from 'angular-auth-oidc-client';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -38,7 +40,8 @@ import { SearchuserComponent } from './searchuser/searchuser.component';
     FilterPipe,
     UserProfileComponent,
     SearchuserComponent,
-    FilterPipe
+    FilterPipe,
+    ChatButtonComponent,
   ],
   // de pus modulele aici
   imports: [
