@@ -34,7 +34,7 @@ import { FilterPipe} from './list-friends/utils/filter.pipe'
     RegisterComponent,
     HeaderComponent,
     ListFriendsComponent,
-    FilterPipe
+    FilterPipe,
     UserProfileComponent
   ],
   // de pus modulele aici
