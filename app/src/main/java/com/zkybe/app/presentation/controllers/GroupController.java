@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/zkybe/groups")
+@CrossOrigin(origins = "http://localhost:4200")
 public class GroupController {
     @Autowired
     private GroupService groupService;

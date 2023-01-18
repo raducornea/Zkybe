@@ -1,4 +1,11 @@
 <mat-toolbar class="header_detail">
+<<<<<<<<< Temporary merge branch 1
+    <a class="logo"><img src="assets/img/logo.png"></a>
+    <a mat-button  routerLink=""> Home</a>
+    <a mat-button>Login</a>
+    <a mat-button routerLink="/register">Register</a>
+    <a mat-button routerLink="/my-profile">My profile</a>
+=========
     <span>
         <a routerLink="">
             <img class="logo" src="assets/img/logo.png">
@@ -33,6 +40,15 @@
     </span>
 
     <span *ngIf="user != null;">
+        <a mat-button routerLink="/profile" class="button">
+            <div class="icon-holder">
+                <mat-icon>face</mat-icon>
+                Profile
+            </div>
+        </a>
+    </span>
+
+    <span *ngIf="user != null;">
         <a mat-button routerLink="/chat" class="button">
             <div class="icon-holder">
                 <mat-icon>chat</mat-icon>
@@ -50,6 +66,15 @@
         </a>
     </span>
 
+    <span *ngIf="user != null;">
+        <a mat-button routerLink="/search" class="button">
+            <div class="icon-holder">
+                <mat-icon>explore</mat-icon>
+                Search
+            </div>
+        </a>
+    </span>
+
     <span class="username">
         {{user?.username}}
     </span>
@@ -63,10 +88,5 @@
         </a>
     </span>
 
+>>>>>>>>> Temporary merge branch 2
 </mat-toolbar>
-<!-- <nav class="header_detail">
-    <a class="logo"><img src="assets/img/logo.png"></a>
-    <a mat-button  routerLink=""> Home</a>
-    <a mat-button>Login</a>
-    <a mat-button routerLink="/register">Register</a>
-</nav> -->

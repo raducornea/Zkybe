@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserProfile"
+    android:background="#F7FDF1">
+
+
+    <ImageView
+        android:id="@+id/imageViewUserProfilePic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/avatar1" />
+
+    <EditText
+        android:id="@+id/editTextUpUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="8"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:inputType="none"
+        android:text="Username"
+        android:textSize="55px"
+        app:layout_constraintStart_toStartOf="@+id/textUpUsername"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewUserProfilePic" />
+
+    <TextView
+        android:id="@+id/textUpUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:text="Username"
+
+        android:textColor="@color/green2"
+        android:textSize="55px"
+        app:layout_constraintBottom_toTopOf="@+id/editTextUpUsername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.891"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextUpEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="8"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:inputType="none"
+        android:text="Email"
+        android:textSize="55px"
+        app:layout_constraintEnd_toEndOf="@+id/editTextUpPassword"
+        app:layout_constraintStart_toStartOf="@+id/textViewUpEmail"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUpEmail" />
+
+
+    <TextView
+        android:id="@+id/textViewUpEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:text="Email"
+        android:textColor="@color/green2"
+        android:textSize="55px"
+        app:layout_constraintEnd_toEndOf="@+id/editTextUpPassword"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextUpPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUpPassword" />
+
+    <TextView
+        android:id="@+id/textUpPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:text="Password"
+        android:textColor="@color/green2"
+        android:textSize="55px"
+        app:layout_constraintBottom_toTopOf="@+id/editTextUpPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextUpUsername"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toStartOf="@+id/editTextUpUsername"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUpUsername" />
+
+    <EditText
+        android:id="@+id/editTextUpPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="8"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:inputType="none"
+        android:text="Password"
+        android:textSize="55px"
+        app:layout_constraintEnd_toEndOf="@+id/editTextUpUsername"
+        app:layout_constraintStart_toStartOf="@+id/textUpPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUpUsername" />
+
+    <TextView
+        android:id="@+id/textViewUpFirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:text="First Name"
+        android:textColor="@color/green2"
+        android:textSize="55px"
+        app:layout_constraintEnd_toStartOf="@+id/textViewUpLastName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextUpEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUpEmail" />
+
+    <EditText
+        android:id="@+id/editTextUpFirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="5"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:inputType="none"
+        android:text="First Name"
+        android:textSize="55px"
+        app:layout_constraintEnd_toEndOf="@+id/textViewUpFirstName"
+        app:layout_constraintHorizontal_bias="0.029"
+        app:layout_constraintStart_toStartOf="@+id/textViewUpFirstName"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUpFirstName" />
+
+    <TextView
+        android:id="@+id/textViewUpLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:text="Last Name"
+        android:textColor="@color/green2"
+        android:textSize="55px"
+        app:layout_constraintEnd_toEndOf="@+id/editTextUpEmail"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextUpEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUpEmail" />
+
+    <EditText
+        android:id="@+id/editTextUpLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:inputType="none"
+        android:text="Last Name"
+        android:textSize="55px"
+        app:layout_constraintEnd_toEndOf="@+id/textViewUpLastName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewUpLastName"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUpLastName" />
+
+    <Button
+        android:id="@+id/buttonEditUserProfile"
+        android:layout_width="180dp"
+        android:layout_height="48dp"
+        android:background="@drawable/btn_green1"
+        android:text="Edit"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUpLastName" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
