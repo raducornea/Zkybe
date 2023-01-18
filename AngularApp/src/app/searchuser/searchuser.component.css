@@ -1,0 +1,12 @@
+.search-control {
+  flex: 1;
+  font-size: 1rem;
+  border: 0;
+  outline: none;
+}
+
+.user{
+  float:left;
+  width:100px; 
+  margin-left:30px;
+}
