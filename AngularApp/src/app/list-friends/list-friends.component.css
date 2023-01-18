@@ -1,0 +1,79 @@
+
+
+  form.example input[type=text] {
+    padding: 15px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 10%;
+    background: #f1f1f1;
+  }
+  
+  form.example button {
+    float: left;
+    width: 5%;
+    padding: 15px;
+    background: #0c9019;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #3bde12;
+  }
+  
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  div.friends{
+    background-color: rgb(236, 241, 234);
+    /* width: 300px; */
+    /* border: 15px solid green; */
+    
+    padding: 50px;
+    margin: 20px;
+    margin-top: 10px;
+  }
+  fieldset{
+    background-color: rgb(236, 241, 234);
+    padding: 50px;
+    margin: 20px;
+    
+  }
+
+  legend {
+    
+    font-size:40px;
+    /* padding: 10px ; */
+    color: rgb(2, 1, 1);
+    
+  }
+  .icon-display {
+    transform: scale(2);
+ }
+ .material-icons.color { color: #031203; }
+
+.bg {
+   /* The image used */
+  /* background-image: url("/assets/img/Background.jpg"); */
+  background-color: rgb(169, 194, 159);
+
+  /* height: 300vh; */
+   /* Full height */
+   height: 300vh;
+
+   /* Center and scale the image nicely */
+   background-position: center;
+   background-repeat: repeat;
+   background-size: cover;
+}
+
+strong.profile{
+  font-size:20px;
+}

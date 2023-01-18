@@ -1,0 +1,38 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="bg">
+    <fieldset class="friends">
+        <legend><mat-icon class="icon-display" class="material-icons color" >group</mat-icon><strong>Friends</strong></legend>
+        <form class="example" action="/action_page.php">
+            <input type="text" placeholder="Search" name="search"[(ngModel)]="searchText">
+            <button type="submit"><i class="fa fa-search"(click)="searchClose()"></i></button>
+            
+          </form>
+
+              <mat-list-item *ngFor="let friend of friends ">
+                <ng-template [ngIf] = "friend.user_id==2">
+                
+                 <ng-template ngFor let-profile [ngForOf]="profiles | filter: searchText" >
+                   <ng-template [ngIf] = "friend.friend_id==profile.id">
+                     <fieldset>
+                     <mat-icon mat-list-avatar style="width:auto">person</mat-icon>
+                     <div><strong class="profile">{{ profile.last_name }}  {{ profile.first_name }}</strong></div> 
+                     {{profile.status}}
+                   </fieldset>
+                  </ng-template>
+                 </ng-template>
+               </ng-template>
+             </mat-list-item>
+              <mat-list-item *ngIf="(profiles| filter: searchText).length === 0">
+                <fieldset>
+                <mat-icon mat-list-avatar>error</mat-icon>
+                 <div mat-line><strong class="profile">This person does not exist in your friends lists!</strong></div>
+                </fieldset>
+              </mat-list-item>
+          </fieldset> 
+          
+ </div>   
+
+
+ 
