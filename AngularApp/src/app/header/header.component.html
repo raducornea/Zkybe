@@ -33,6 +33,15 @@
     </span>
 
     <span *ngIf="user != null;">
+        <a mat-button routerLink="/profile" class="button">
+            <div class="icon-holder">
+                <mat-icon>face</mat-icon>
+                Profile
+            </div>
+        </a>
+    </span>
+
+    <span *ngIf="user != null;">
         <a mat-button routerLink="/chat" class="button">
             <div class="icon-holder">
                 <mat-icon>chat</mat-icon>
@@ -46,6 +55,15 @@
             <div class="icon-holder">
                 <mat-icon>contacts</mat-icon>
                 Friends
+            </div>
+        </a>
+    </span>
+
+    <span *ngIf="user != null;">
+        <a mat-button routerLink="/search" class="button">
+            <div class="icon-holder">
+                <mat-icon>explore</mat-icon>
+                Search
             </div>
         </a>
     </span>
@@ -64,9 +82,3 @@
     </span>
 
 </mat-toolbar>
-<!-- <nav class="header_detail">
-    <a class="logo"><img src="assets/img/logo.png"></a>
-    <a mat-button  routerLink=""> Home</a>
-    <a mat-button>Login</a>
-    <a mat-button routerLink="/register">Register</a>
-</nav> -->

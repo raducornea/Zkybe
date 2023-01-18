@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { ChatConversationComponent } from './chat/chat-conversation/chat-conversation.component';
 import { ChatInformationComponent } from './chat/chat-information/chat-information.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+import { ListFriendsComponent } from './list-friends/list-friends.component';
 import { RegisterComponent } from './register/register.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SearchuserComponent } from './searchuser/searchuser.component';
 
 const routes: Routes = [
@@ -23,9 +25,17 @@ const routes: Routes = [
     { 
       path: 'register', component: RegisterComponent
     },
-     // localhost:4200/searchuser
-     { 
-      path: 'searchuser', component: SearchuserComponent
+    // localhost:4200/profile
+    { 
+      path: 'profile', component: UserProfileComponent
+    },
+    // localhost:4200/search
+    { 
+      path: 'search', component: SearchuserComponent
+    },
+    // localhost:4200/friends
+    { 
+      path: 'friends', component: ListFriendsComponent
     },
     // localhost:4200/*
     { 
